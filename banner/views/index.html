@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>banner</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			.content{width: 100%;}
+			.banner{height: 450px;overflow: hidden;position: relative;margin: 0;padding: 0;width: 100%;}
+			.banner a{display: inline-block;width: 20px;height: 30px;position: absolute;top: 50%;cursor: pointer;z-index: 2;}
+			.left{background: url(../images/left.png) 0 0;left: 30px;}
+			.right{background: url(../images/right.png) 0 0;right: 30px;}
+			.banner ul{height: 100%;position: absolute;top: 0;left: 0;}
+			.banner ul:after{content: '';display: block;height: 0;visibility: hidden;clear: both;}
+			.banner ul li{float: left;list-style-type: none;display: inline-block;height: 100%;}		
+			.banner ul li img{width: 100%;height: 100%;}
+			.banner .pointer{position: absolute;z-index: 2;top: 95%;left: 50%;}
+			.banner .pointer i{display: inline-block;width: 8px;height: 8px;border-radius: 4px;background: #fff;margin: 0 8px;cursor: pointer;}
+			.banner .pointer i.on{background: red;}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<div class="banner">
+				<a class="left"></a>
+				<ul id="bannerUl">
+					<li>
+						<img src="../images/banner1.jpg" />
+					</li>
+					<li>
+						<img src="../images/banner2.jpg" />
+					</li>
+					<li>
+						<img src="../images/banner3.jpg" />
+					</li>
+				</ul>
+				<a class="right"></a>
+				<div class="pointer"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery-2.0.0.min.js" ></script>
+		<script type="text/javascript" src="../js/banner.js" ></script>
+		<script type="text/javascript">
+			/*$(function(){
+				//初始化设置banner
+				var _banner = $('.banner');
+				var _ul = $('#bannerUl');
+				var _li = $('#bannerUl').find('li');
+				var _liW = _li.width();
+				var _liL = _li.length;
+				var _index = 0;
+				_ul.width(_liW * _liL);
+				//右箭头事件
+				$('.right').click(function(){
+					move(true);
+				})
+				//左箭头事件
+				$('.left').click(function(){
+					move(false);
+				});
+				
+				function move(flag){
+					if(flag){
+						_index++;
+						if(_index == _liL) _index = 0;
+					}else{
+						_index--;
+						if(_index == -1) _index = _liL - 1;
+					}
+					var ulLeft = _index*_liW + 'px';
+					$('ul').stop(true).css({left : '-'+ulLeft});
+				}
+				
+				//自动轮播事件
+				var _timer = setInterval(function(){
+					move(true);
+				},1000);
+				
+				//hover事件控制定时器
+				$('.banner').hover(function(){
+					$('.left,.right').show();
+					clearInterval(_timer);
+				},function(){					
+					$('.left,.right').hide();
+					_timer = setInterval(function(){
+						move(true);
+					},3000);
+				});
+			})*/
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
