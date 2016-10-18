@@ -1,0 +1,783 @@
+@import "./_mixins.less";
+@import "./_variables.less";
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.fn-left {
+    float: left;
+}
+
+.fn-right {
+    float: right;
+}
+
+.fn-nomt {
+    margin-top: 0;
+}
+
+.fn-nomb {
+    margin-bottom: 0;
+}
+
+.fn-noml {
+    margin-left: 0;
+}
+
+.fn-nomr {
+    margin-right: 0;
+}
+
+.fn-cen {
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.fn-cut {
+    /* 单行文本截断省略号 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fn-clear{
+	.clearfix();
+}
+
+.fn-wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+html, body {
+    padding: 0;
+    background: #070f1a;
+    font-family: 'Microsoft YaHei';
+}
+
+a{
+    color: inherit;
+    cursor: pointer;
+}
+
+.clearFloat{
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.wrap{
+    background: #070f1a;
+    .head{
+        min-width: 1200px;
+        height: 965px;
+        padding-top: 855px;
+        background: #070f1a url('../images/head.png') center;
+        .head-nav{
+            width: 100%;
+            height: 110px;
+            border-top: 1px solid #1a2841;
+            ul{
+                width: 1200px;
+                margin: 0 auto;
+                li{
+                    float: left;
+                    width: 240px;
+                    height: 110px;
+                    a{
+                        display: block;
+                        height: 100%;
+                        &:hover{
+                            background: url('../images/sprite.png') no-repeat 100% 100%;
+                            background-position: 0 0;
+                        }
+                    }
+                }
+                &:after{
+                    content: '';
+                    .clearFloat;
+                }
+            }
+        }
+    }    
+    .container{
+        width: 1200px;
+        margin: 0 auto;
+        background: #070f1a;
+        padding-bottom: 232px;
+        .top-info{
+            height: 350px;
+            padding: 62px 0 58px 0;
+            .top-info-left{
+                position: relative;
+                float: left;
+                width: 670px;
+                height: 232px;
+                .hd{
+                    position: absolute;
+                    z-index: 3;
+                    top: 0;
+                    right: 0;
+                    width: 135px;
+                    height: 58px;
+                    li{
+                        position: relative;
+                        width: 135px;
+                        height: 58px;
+                        cursor: pointer;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                        &.on{
+                            border: 1px solid #fff;
+                            &:before{
+                                content: '';
+                                position: absolute;
+                                top: 40%;
+                                left: -16px;
+                                display: block;
+                                width: 0;
+                                height: 0;
+                                border: 8px solid #fff;
+                                border-color: transparent #fff transparent transparent;
+                            }
+                        }
+                    }
+                }
+                .bd{
+                    width: 535px;
+                    height: 232px;
+                    .tempWrap{
+                    }
+                    ul{
+                        li{
+                            a{
+                                position: relative;
+                                display: block;
+                                img{
+                                    width: 535px;
+                                    height: 232px;
+                                }
+                                p{
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    background: rgba(0,0,0,0.5);
+                                    text-indent: 2em;
+                                    font-size: 16px;
+                                    color: #bababa;
+                                    height: 40px;
+                                    line-height: 40px;
+                                    .text-overflow;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .top-info-right{
+                position: relative;
+                float: right;
+                width: 500px;
+                height: 230px;
+                background: url('../images/sprite.png') no-repeat 100% 100%;
+                background-position: 0 -488px;
+                padding: 27px 30px;
+                ul{
+                    li{
+                        a{
+                            position: relative;
+                            display: block;
+                            color: #53698d;
+                            font-size: 14px;
+                            line-height: 29px;
+                            padding-right: 60px;
+                            .text-overflow;
+                            span{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                height: 29px;
+                            }
+                            &:hover{
+                                color: #d4dfe7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .match-box{
+            .match-box-tab{
+                position: relative;
+                >i{
+                    position: absolute;
+                    top: 0;
+                    left: 62px;
+                    display: block;
+                    width: 1075px;
+                    height: 2px;
+                    background: #2fa5ff;
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        top: 2px;
+                        left: 430px;
+                        display: block;
+                        width: 220px;
+                        border-top: 6px solid #2fa5ff;
+                        border-left: 3px solid transparent;
+                        border-right: 3px solid transparent;
+                    }
+                }
+                a{
+                    float: left;
+                    display: block;
+                    width: 600px;
+                    height: 100px;
+                    text-align: center;
+                    cursor: pointer;
+                    background: #273554;
+                    padding: 25px 0;
+                    i{
+                        display: inline-block;
+                        background: url('../images/sprite.png') no-repeat 100% 100%;
+                    }
+                }
+                a.regular{
+                    i{
+                        width: 152px;
+                        height: 49px;
+                        background-position: -260px -69px;
+                    }
+                    &.on{
+                        background: #1e2941;
+                        i{
+                            background-position: -260px 0;
+                        }
+                    }
+                    &:hover{
+                        i{
+                            background-position: -260px 0;
+                        }
+                    } 
+                }
+                a.season{
+                    i{                        
+                        width: 89px;
+                        height: 49px;
+                        background-position: -432px -69px;
+                    }  
+                    &.on{
+                        background: #1e2941;
+                        i{
+                            background-position: -432px 0;
+                        }
+                    }  
+                    &:hover{
+                        i{
+                            background-position: -432px 0;
+                        }
+                    }                    
+                }
+                &:after{
+                    .clearFloat;
+                }
+            }
+            .match-box-regular{
+                //display: none;
+                background: #131c2f;
+                .match-box-regular-tab{
+                    width: 820px;
+                    margin: 0 auto;
+                    line-height: 76px;
+                    a{
+                        float: left;
+                        display: block;
+                        width: 50%;
+                        color: #fff;
+                        font-size: 20px;
+                        text-align: center;
+                    }
+                    a.on{
+                        color: #2fa5ff;
+                    }
+                    &:after{
+                        .clearFloat;
+                    }
+                }
+                .match-box-regular-schedule{
+                    //display: none;
+                    table{
+                        width: 100%;
+                        height: 520px;
+                        table-layout: fixed;
+                        tr{
+                            width: 100%;
+                            th{
+                                color: #d3d8e7;
+                                font-size: 16px;
+                                text-align: center;
+                                line-height: 45px;
+                                background: #1a253e;
+                            }
+                            td{
+                                text-align: center;
+                                border: 1px solid #1a253e;
+                                background: #162035;
+                                p.time{
+                                    line-height: 45px;
+                                    font-size: 14px;
+                                    color: #8992af;
+                                }
+                                p.team{
+                                    font-size: 14px;
+                                    color: #8992af;
+                                    .text-overflow;
+                                }
+                                p.match-time{
+                                    font-size: 12px;
+                                    color: #555e7b;
+                                    .text-overflow;
+                                }
+                            }
+                        }
+                    }
+                }
+                .match-box-regular-score{
+                    display: none;
+                    table{
+                        width: 100%;
+                        table-layout: fixed;
+                        tr{
+                            width: 100%;
+                            text-align: center;
+                            line-height: 40px;
+                            th{
+                                color: #949fb6;
+                                font-size: 18px;
+                                background: #1a253e;
+                            }
+                            th:nth-of-type(3){
+                                width: 312px;
+                            }
+                            th:nth-of-type(7){
+                                width: 170px;
+                            }
+                            td{
+                                color: #8992af;
+                                font-size: 14px;
+                                img{
+                                    width: 30px;
+                                    height: 30px;
+                                    margin-right: 10px;
+                                }
+                                
+                            }
+                            &:nth-of-type(even){
+                                background: #141e32;
+                            }
+                        }
+                    }
+                }
+            }            
+            .match-box-season{     
+                display: none;           
+                background: #162035;
+                padding: 10px 23px 11px 29px;
+                p.title{
+                    color: #616983;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                div.match-season-list{
+                    height: 485px;
+                    padding: 37px 0;                    
+                    .match-season-list-box{
+                        position: relative;
+                        .match-season-list-box-top{
+                            position: relative;
+                            width: 190px;
+                            height: 46px;
+                            background: #212d47;
+                            line-height: 46px;
+                            font-size: 14px;
+                            margin-bottom: 6px;
+                            cursor: pointer;
+                            img{
+                                width: 40px;
+                                height: 40px;
+                                float: left;
+                                margin-top: 3px;
+                            }
+                            span:first-of-type{
+                                margin-left: 10px;
+                                color: #8a94b1;
+                                display: inline-block;
+                                width: 120px;
+                                .text-overflow;
+                            }
+                            span:last-of-type{
+                                float: right;
+                                margin-right: 5px;
+                                color: #5d84ff;
+                            } 
+                        }
+                        .line-box{
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: 70px;
+                            height: 98px;
+                            .line-box-top{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                width: 100%;
+                                height: 24px;
+                                border-bottom: 1px solid #1c2843;
+                            }
+                            .line-box-centerTop{
+                                position: absolute;
+                                top: 23px;
+                                right: 0;
+                                z-index: 3;
+                                width: 54px;
+                                height: 25px;
+                                border-left: 1px solid #1c2843;
+                                border-bottom: 1px solid #1c2843;
+                                color: #3e4764;
+                                background: #162035;
+                                text-align: center;
+                                font-size: 12px;
+                            }
+                            .line-box-centerBottom{
+                                position: absolute;
+                                top: 47px;
+                                right: 0;
+                                z-index: 3;
+                                width: 54px;
+                                height: 25px;
+                                border-left: 1px solid #1c2843;
+                                border-top: 1px solid #1c2843;
+                                background: #162035;
+                            }
+                            .line-box-bottom{
+                                position: absolute;
+                                top: 71px;
+                                right: 0;
+                                width: 100%;
+                                height: 24px;
+                                border-top: 1px solid #1c2843;
+                            }
+                            &.top{
+                                .line-box-top{
+                                    border-color: #47597f;  
+                                }
+                                .line-box-centerTop{
+                                    border-color: #47597f;
+                                    z-index: 4; 
+                                }
+                            }
+                            &.bottom{
+                                .line-box-centerBottom{
+                                    border-color: #47597f;  
+                                    z-index: 4; 
+                                }
+                                .line-box-bottom{
+                                    border-color: #47597f;
+                                }
+                            }
+                        }
+                    }
+                    .match-season-list-left{
+                        float: left;
+                        width: 260px;
+                        >div:nth-of-type(2){
+                            margin: 58px 0;
+                        }                                                   
+                        i.line{
+                            position: absolute;
+                            top: 23px;
+                            right: -70px;
+                            display: block;
+                            width: 70px;
+                            height: 1px;
+                            background: #1c2843;
+                        }
+                    }
+                    .match-season-list-draw{
+                        float: left;
+                        width: 128px;
+                        height: 409px;
+                        background: #131c2e;
+                        color: #38435c;
+                        font-size: 14px;
+                        padding: 187px 0;
+                        text-align: center;
+                    }
+                    .match-season-list-center{
+                        float: left;
+                        width: 321px;
+                        padding-left: 64px;
+                        >div{
+                            margin-top: 57px;
+                        }
+                        i.line{
+                            position: absolute;
+                            top: 23px;
+                            left: -64px;
+                            display: block;
+                            width: 64px;
+                            height: 1px;
+                            background: #1c2843;
+                        }
+                        .line-box{
+                            width: 67px;
+                        }
+                    }
+                    .match-season-list-right{
+                        float: left;
+                        width: 249px;
+                        padding-top: 81px;
+                        .match-season-list-box{
+                            >div:nth-of-type(2){
+                                margin-top: 110px;
+                            }
+                        }
+                    }
+                    .match-season-list-champion{
+                        float: left;
+                        width: 190px;
+                        padding-top: 162px;                        
+                        .line-box{
+                            top: -81px;
+                            left: -59px;
+                            width: 59px;
+                            .line-box-top{
+
+                            }
+                            .line-box-centerTop{
+                                top: 23px;
+                                height: 83px;
+                            }
+                            .line-box-centerBottom{
+                                top: 105px;
+                                height: 75px;
+                            }
+                            .line-box-bottom{
+                                top: 179px;
+                            }
+                        }
+                    }
+                }
+                p.bottom{
+                    color: #616983;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                p.bottom{
+                    color: #3c455f;
+                    font-size: 14px;
+                }
+            }
+        }
+        .welfare-send{
+            .title{
+                display: block;
+                width: 730px;
+                height: 110px;
+                background: url('../images/sprite.png') no-repeat 100% 100%;
+                background-position: 0 -233px;
+                margin: 59px auto 16px;
+            }
+            .welfare-send-box{
+                position: relative;
+                width: 100%;
+                height: 606px;
+                >ul{
+                    width: 100%;
+                    li{
+                        float: left;
+                        width: 299px;
+                        height: 150px;
+                        background: #141e32;
+                        text-align: center;
+                        line-height: 150px;
+                        border: 1px solid #090f1d;
+                        cursor: pointer;
+                        img{
+                            width: 100px;
+                            height: 100px;
+                        }
+                    }
+                }
+                .welfare-send-alert{
+                    //display: none;
+                    position: absolute;
+                    top: 151px;
+                    left: 299px;
+                    width: 600px;
+                    height: 302px;
+                    background: url('../images/sprite.png') no-repeat 100% 100%;
+                    background-position: -520px -487px;
+                    i.team-flag{
+                        display: none;
+                    }
+                    i.welfare-send-alert-close{
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 20px;
+                        height: 20px;
+                        background: url('../images/sprite.png') no-repeat 100% 100%;
+                        background-position: -814px 0;
+                        cursor: pointer;
+                    }
+                    ul{
+                        width: 100%;
+                        li{
+                            float: left;
+                            width: 200px;
+                            height: 151px;
+                            padding-top: 8px;
+                            text-align: center;
+                            cursor: pointer;
+                            p{
+                                padding-left: 50px;
+                                color: #b3c5db;
+                                font-size: 12px;
+                                text-align: left;
+                                .text-overflow;
+                                span{
+                                    float: left;
+                                    display: inline-block;
+                                    text-align: center;
+                                    width: 40px;
+                                    color: #fff;
+                                    font-weight: bold;
+                                }
+                            }
+                            img{
+                                width: 100px;
+                                height: 100px;
+                            }
+                        }
+                        li.vote-td{
+                            p{
+                                padding-left: 0;
+                                text-align: center;
+                                span{
+                                    float: none;
+                                    color: #fff32c;                                        
+                                    display: inline;
+                                }
+                            }
+                            i{
+                                display: inline-block;
+                                width: 100px;
+                                height: 100px;
+                                background: url('../images/sprite.png') no-repeat 100% 100%;
+                                background-position: -541px 0;
+                            }
+                        }                        
+                    }
+                    .enter-info{
+                        display: none;
+                        position: absolute;
+                        top: 80px;
+                        left: 75px;
+                        width: 421px;
+                        height: 125px;
+                        background: #141e32;
+                        border: 1px solid #1d2f3c;
+                        padding: 23px 27px 35px 25px;
+                        i.enter-info-close{
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: 20px;
+                            height: 20px;
+                            background: url('../images/sprite.png') no-repeat 100% 100%;
+                            background-position: -814px 0;
+                            cursor: pointer;
+                        }
+                        p{
+                            color: #8a94a8;
+                            font-size: 16px;
+                            padding-bottom: 10px;
+                        }
+                        input[type=text]{
+                            width: 253px;
+                            height: 38px;
+                            background: #0a101b;
+                            border: 0;
+                            color: #8a94a8;
+                            text-indent: 1em;
+                        }
+                        input[type=button]{
+                            width: 109px;
+                            height: 38px;
+                            border: 0;
+                            background: #4080ff;
+                            color: #fff;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+        .activity-explain{
+            i.title{
+                display: block;
+                width: 557px;
+                height: 104px;
+                background: url('../images/sprite.png') no-repeat 100% 100%;
+                background-position: 0 -363px;
+                margin: 59px auto 16px;
+            }
+            .activity-explain-box{
+                position: relative;
+                width: 100%;
+                height: 180px;
+                background: #141e32;
+                padding: 41px 0 0 35px;
+                i{
+                    position: absolute;
+                    top: 53px;
+                    right: 29px;
+                    display: block;
+                    width: 132px;
+                    height: 117px;
+                    background: url('../images/sprite.png') no-repeat 100% 100%;
+                    background-position: -662px 0;
+                }
+                p{
+                    color: #8c96a9;
+                    font-size: 14px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}
