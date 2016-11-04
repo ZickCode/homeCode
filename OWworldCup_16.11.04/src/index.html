@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="renderer" content="webkit" charset="utf-8">
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta content=always name=referrer>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/plugin.css">
+	<script type="text/javascript" src="assets/js/vendor.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="head">
+			<a href="" class="head-left"></a>
+			<a href="" class="head-center"></a>
+			<a href="" class="head-right"></a>
+		</div>
+		<div class="container">
+			<!-- 右侧二维码 -->
+			<div class="qr-code"></div>
+			<!-- 视频 -->
+			<div class="video-box">
+				<i class="icon"></i>
+				<a href="">
+					<img src="http://placehold.it/1000x520" alt="">
+					<div class="hover-box">
+						<i class="hover-icon"></i>
+					</div>
+				</a>
+				<i class="text"></i>
+			</div>
+			<!-- 轮播 -->
+			<div class="banner">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<a href="" target="_blank" class="swiper-slide">
+							<img src="http://placehold.it/750x500" alt="">
+							<p>守望先锋里的躲猫猫入门攻略</p>
+						</a>
+						<a href="" target="_blank" class="swiper-slide">
+							<img src="http://placehold.it/750x500" alt="">
+							<p>守望先锋里的躲猫猫入门攻略</p>
+						</a>
+						<a href="" target="_blank" class="swiper-slide">
+							<img src="http://placehold.it/750x500" alt="">
+							<p>守望先锋里的躲猫猫入门攻略</p>
+						</a>
+						<a href="" target="_blank" class="swiper-slide">
+							<img src="http://placehold.it/750x500" alt="">
+							<p>守望先锋里的躲猫猫入门攻略</p>
+						</a>
+						<a href="" target="_blank" class="swiper-slide">
+							<img src="http://placehold.it/750x500" alt="">
+							<p>守望先锋里的躲猫猫入门攻略守望先锋里的躲猫猫入门攻略守望先锋里的躲猫猫入门攻略守望先锋里的躲猫猫入门攻略守望先锋里的躲猫猫入门攻略守望先锋里的躲猫猫入门攻略</p>
+						</a>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				<a href="" target="_blank">
+					<img src="http://placehold.it/450x250" alt="">
+					<p>守望先锋里的躲猫猫入门攻略</p>
+				</a>
+				<a href="" target="_blank">
+					<img src="http://placehold.it/450x250" alt="">
+					<p>守望先锋里的躲猫猫入门攻略</p>
+				</a>
+			</div>
+			<!-- 赛事 -->
+			<div class="match-box">
+				<!-- 赛事资讯 -->
+				<div class="match-news">
+					<div class="ui-title">
+						<i class="ui-title-icon"></i>
+						<a href="" class="ui-title-viewmore"></a>
+					</div>
+					<ul>
+						#set ($list=$data.getPicList("世界杯新闻",60,255,5))
+                        #foreach($one in $list)
+                            #set ($a=$data.getArticleInfo($one.getString("articleid")))
+                            #set ($u=$data.getUrl($one.getString("articleid")))
+                            #set ($t=$one.getString("title"))
+                            #set ($z=$one.getString("digest"))
+                            #set ($p=$one.getString("picurl"))
+                            #set ($d=$tools.parseTime($one.getString("posttime"),"M/D"))
+                            <li><a href="$u" title="$t" target="_blank">
+								<p>$t</p>
+								<p class="time">$d</p>
+							</a></li>
+                        #end
+						<!-- <li><a href="" target="_blank">
+							<p>暴雪嘉年华守望先锋世界杯解说团队公布</p>
+							<p class="time">10/11</p>
+						</a></li> -->
+					</ul>
+				</div>
+				<!-- 比赛时间 -->
+				<div class="match-time">
+					<div class="ui-title">
+						<i class="ui-title-icon"></i>
+					</div>
+					<ul>
+						<li>
+							<span>积分赛</span>：10月30日 3：40-12：00
+						</li>
+						<li>
+							<span>积分赛</span>：10月30日 3：40-12：00
+						</li>
+						<li>
+							<span>积分赛</span>：10月30日 3：40-12：00
+						</li>
+						<li>
+							<span>积分赛</span>：10月30日 3：40-12：00
+						</li>
+						<li>
+							<span>积分赛</span>：10月30日 3：40-12：00
+						</li>
+					</ul>
+					<div class="match-time-icon-box">
+						<i class="match-time-icon"></i>
+					</div>
+				</div>
+			</div>
+			<!-- 赛程 -->			
+			<div class="match-shedule">
+				<div class="match-shedule-linebox">
+					<div class="match-shedule-linebox-group">
+						<i class="ui-title"></i>
+						<div class="team-box">
+							<div class="team-name">
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</div>
+							<p class="score">1:2</p>
+							<div class="team-name">
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</div>
+							<div class="team-box-line">
+								<div class="line-top-left"></div>
+								<div class="line-top-right"></div>
+								<div class="line-bottom-left"></div>
+								<div class="line-bottom-right"></div>
+							</div>
+						</div>
+						<div class="team-box">
+							<div class="team-name">
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</div>
+							<p class="score">1:2</p>
+							<div class="team-name">
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</div>
+							<div class="team-box-line">
+								<div class="line-top-left"></div>
+								<div class="line-top-right"></div>
+								<div class="line-bottom-left"></div>
+								<div class="line-bottom-right"></div>
+							</div>
+						</div>
+					</div>
+					<div class="match-shedule-linebox-four">
+						<i class="ui-title"></i>
+						<div class="team-box">
+							<div class="team-name">
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</div>
+							<p class="score">1:2</p>
+							<div class="team-name">
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</div>
+							<div class="team-box-line">
+								<div class="line-top-left"></div>
+								<div class="line-top-right"></div>
+								<div class="line-bottom-left"></div>
+								<div class="line-bottom-right"></div>
+							</div>
+						</div>
+					</div>
+					<div class="match-shedule-linebox-champion">
+						<i class="ui-title"></i>
+						<div class="team-box">
+							<div class="team-name">
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 积分榜 -->
+			<div class="match-score-box">
+				<!-- A组积分榜 -->
+				<div class="match-score">
+					<i class="title"></i>
+					<table>
+						<tr>
+							<th>排行</th>
+							<th>战队名</th>
+							<th>胜-负</th>
+							<th>总比分</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								瑞典
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								西班牙
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+					</table>
+				</div>			
+				<!-- B组积分榜 -->
+				<div class="match-score match-score-b">
+					<i class="title"></i>
+					<table>
+						<tr>
+							<th>排行</th>
+							<th>战队名</th>
+							<th>胜-负</th>
+							<th>总比分</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+					</table>
+				</div>	
+				<!-- C组积分榜 -->
+				<div class="match-score match-score-c">
+					<i class="title"></i>
+					<table>
+						<tr>
+							<th>排行</th>
+							<th>战队名</th>
+							<th>胜-负</th>
+							<th>总比分</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+					</table>
+				</div>	
+				<!-- D组积分榜 -->
+				<div class="match-score match-score-d">
+					<i class="title"></i>
+					<table>
+						<tr>
+							<th>排行</th>
+							<th>战队名</th>
+							<th>胜-负</th>
+							<th>总比分</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>
+								<img src="http://placehold.it/35x15" alt="">
+								Cloud9
+							</td>
+							<td>2-0</td>
+							<td>2-0</td>
+						</tr>
+					</table>
+				</div>				
+				<!-- 背景图 -->
+				<i class="match-score-back"></i>
+			</div>
+			<!-- 周边图集 -->	
+			<div class="image-box">
+				<div class="image-box-body">
+					<i class="title"></i>
+					<ul>
+						<!-- #set ($list=$data.getPicList("世界杯图集",60,255,4))
+						                        #foreach($one in $list)
+						                            #set ($a=$data.getArticleInfo($one.getString("articleid")))
+						                            #set ($u=$data.getUrl($one.getString("articleid")))
+						                            #set ($t=$one.getString("title"))
+						                            #set ($z=$one.getString("digest"))
+						                            #set ($p=$one.getString("picurl"))
+						                            #set ($d=$tools.parseTime($one.getString("posttime"),"M/D"))
+							<li><a href="$u" title="$t" target="_blank">
+								<img src="$p" alt="">
+							</a></li>
+						                        #end -->
+						<li><a href="" target="_blank">
+							<img src="http://placehold.it/290x200" alt="">
+						</a></li>
+						<li><a href="" target="_blank">
+							<img src="http://placehold.it/290x200" alt="">
+						</a></li>
+						<li><a href="" target="_blank">
+							<img src="http://placehold.it/290x200" alt="">
+						</a></li>
+						<li><a href="" target="_blank">
+							<img src="http://placehold.it/290x200" alt="">
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/js/page/main.js"></script>
+</body>
+</html>

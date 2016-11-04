@@ -1,0 +1,695 @@
+@import "./_mixins.less";
+@import "./_variables.less";
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.fn-left {
+    float: left;
+}
+
+.fn-right {
+    float: right;
+}
+
+.fn-nomt {
+    margin-top: 0;
+}
+
+.fn-nomb {
+    margin-bottom: 0;
+}
+
+.fn-noml {
+    margin-left: 0;
+}
+
+.fn-nomr {
+    margin-right: 0;
+}
+
+.fn-cen {
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.fn-cut {
+    /* 单行文本截断省略号 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fn-clear{
+	.clearfix();
+}
+
+.fn-wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: inherit;
+}
+
+.clear-float{
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.wrap{
+    width: 100%;
+    height: 4288px;
+    min-width: 1200px;
+    background: url('../images/back.jpg') no-repeat center;
+    .head{
+        padding-top: 607px;
+        width: 1200px;
+        height: 1173px;
+        background: url('../images/head-back.jpg') no-repeat center;
+        margin: 0 auto;
+        a{
+            display: inline-block;
+            width: 315px;
+            height: 90px;
+            &.head-center{
+                width: 560px;
+            }
+        }
+    }
+    .container{
+        margin-top: -476px;
+        .qr-code{
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            z-index: 9999;
+            margin-top: -190px;
+            height: 511px;
+            width: 150px;
+            background:url(../images/qr-code.png) no-repeat;
+        }
+        .video-box{
+            width: 1200px;
+            margin: 0 auto;
+            i.icon{
+                display: block;
+                margin: 0 auto;
+                height:90px;
+                width:268px;
+                background:url(../images/sprite.png) no-repeat;
+                background-position:-730px -269px;
+            }
+            a{
+                position: relative;
+                display: block;
+                width: 1000px;
+                margin: 0 auto;
+                img{
+                    width: 1000px;
+                    height: 520px;
+                }
+                .hover-box{
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 3;
+                    width: 100%;
+                    height: 520px;
+                    background: #000;
+                    opacity: .5;
+                    i.hover-icon{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        display: block;
+                        height:62px;
+                        width:410px;
+                        z-index: 4;
+                        margin: -31px 0 0 -205px;
+                        background:url(../images/sprite.png) no-repeat;
+                        background-position:-588px -152px;
+                    }
+                }
+                i.hover-icon{
+                    display: none;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    height:62px;
+                    width:410px;
+                    margin: -31px 0 0 -205px;
+                    background:url(../images/sprite.png) no-repeat;
+                    background-position:-588px -152px;
+                }
+                &:hover{
+                    .hover-box{
+                        display: block;
+                    }
+                }
+            }
+            i.text{
+                display: block;
+                margin: 30px auto 55px;
+                background:url(../images/sprite.png) no-repeat;
+                height:37px;
+                width:998px;
+                background-position:0 0;
+            }
+        }
+        .banner{
+            position: relative;
+            width: 1200px;
+            height: 500px;
+            margin: 0 auto;
+            .swiper-container{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 750px;
+                height: 500px;
+                .swiper-slide{
+                    display: block;
+                    position: relative;
+                    height: 100%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    p{
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 50px;
+                        line-height: 50px;
+                        color: #d5d5d5;
+                        font-size: 14px;
+                        padding: 0 200px 0 20px;
+                        background: #000;
+                        opacity: .5;
+                        font-family: simsun;
+                        .text-overflow;
+                    }
+                }
+                .swiper-pagination{
+                    position: absolute;
+                    bottom: 15px;
+                    left: auto;
+                    right: 0;
+                    width: 120px;
+                    span{
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+            }
+            >a{
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                img{
+                    width: 450px;
+                    height: 250px;
+                }
+                p{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 50px;
+                    line-height: 50px;
+                    color: #d5d5d5;
+                    font-size: 14px;
+                    padding-left: 20px;
+                    background: #000;
+                    opacity: .5;
+                    font-family: simsun;
+                    .text-overflow;
+                }
+            }
+            >a:last-of-type{
+                top: 250px;
+            }
+        }
+        .match-box{
+            width: 1200px;
+            height: 345px;
+            margin: 0 auto;
+            padding-top: 60px;            
+            .ui-title{
+                margin-bottom: 10px;
+                .ui-title-icon{
+                    display: inline-block;
+                    height:30px;
+                    width:157px;
+                    background:url(../images/sprite.png) no-repeat;
+                    background-position:0 -53px;
+                }
+                .ui-title-viewmore{
+                    float: right;
+                    margin-top: 15px;
+                    display: inline-block;
+                    height:10px;
+                    width:55px;
+                    background:url(../images/sprite.png) no-repeat;
+                    background-position:0 -369px;
+                }
+            }
+            .match-news{
+                float: left;
+                width: 595px;
+                height: 285px;
+                ul{
+                    width: 595px;
+                    height: 240px;
+                    background: #fff;
+                    padding: 33px 30px 0 35px;
+                    li{
+                        font-size: 14px;
+                        padding-bottom: 20px;
+                        a{
+                            display: block;
+                            color: #797979;
+                            &:hover{
+                                color: #2ab6ff;
+                            }
+                        }
+                        p{
+                            float: left;
+                            width: 450px;
+                            .text-overflow;
+                        }
+                        p.time{
+                            float: right;
+                            width: 50px;
+                        }
+                        &:after{
+                            .clear-float;
+                        }
+                    }                    
+                    &:after{
+                        .clear-float;
+                    }
+                }
+            }
+            .match-time{
+                float: left;
+                width: 595px;
+                height: 285px;
+                margin-left: 10px;
+                .ui-title-icon{
+                    background-position:0 -98px;
+                }
+                ul{           
+                    float: left;         
+                    width: 287px;
+                    height: 240px;
+                    background: #fff;
+                    padding: 33px 30px 0 35px;
+                    li{
+                        float: left;
+                        color: #797979;
+                        font-size: 14px;
+                        padding-bottom: 20px;
+                        text-align: center;
+                        .text-overflow;
+                        span{
+                            font-weight: bold;
+                        }
+                    }
+                    li:nth-of-type(odd){
+                        border-right: 1px solid #f4f4f4;
+                    }
+                }
+                .match-time-icon-box{  
+                    float: left;                      
+                    width: 287px;                    
+                    height: 240px;
+                    background: #fff;
+                    padding: 33px 30px 0 35px;
+                    i.match-time-icon{
+                        display: block;
+                        width: 240px;
+                        height: 180px;
+                        background: url('../images/match-time-icon.png') no-repeat;
+                    }
+                }
+            }
+        }
+        .match-shedule{
+            width: 1200px;
+            margin: 0 auto;
+            padding-top: 70px;
+            .match-shedule-linebox{
+                >div{                    
+                    float: left;
+                    width: 400px;
+                    height: 557px;
+                    padding-top: 30px;
+                    i.ui-title{
+                        display: block;
+                        margin: 0 auto;
+                        height:46px;
+                        width:166px;
+                        background:url(../images/sprite.png) no-repeat;
+                        background-position:0 -308px;
+                    }
+                }
+                .match-shedule-linebox-group{
+                    background: #008bd5;
+                    i.ui-title{
+                        background:url(../images/match-icon.png) no-repeat;
+                        background-position:0 0;
+                    }
+                    .team-box{
+                        position: relative;
+                        top: 93px;
+                        left: 110px;
+                        width: 170px;
+                        margin-bottom: 82px;
+                        .team-name{
+                            width: 140px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            background: #29b2fb;
+                            color: #b8e6ff;
+                            font-size: 12px;
+                            font-family: arial;
+                            img{
+                                width: 35px;
+                                height: 15px;
+                                margin-right: 10px;
+                            }
+                        }
+                        .score{
+                            color: #b8e6ff;
+                            font-size: 12px;
+                            line-height: 56px;
+                            text-align: right;
+                            padding-right: 10px;
+                        }
+                        .team-box-line{
+                            position: absolute;
+                            top: 0;
+                            left: 140px;
+                            width: 150px;
+                            height: 117px;
+                            .line-top-left{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 30px;
+                                height: 15px;
+                                border-bottom: 1px solid #29b2fb;
+                            }
+                            .line-top-right{
+                                position: absolute;
+                                top: 15px;
+                                left: 30px;
+                                width: 230px;
+                                height: 44px;
+                                border-left: 1px solid #29b2fb;
+                                border-bottom: 1px solid #29b2fb;
+                            }
+                            .line-bottom-left{
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 30px;
+                                height: 15px;
+                                border-top: 1px solid #29b2fb;
+                            }
+                            .line-bottom-right{
+                                position: absolute;
+                                bottom: 15px;
+                                left: 30px;
+                                width: 120px;
+                                height: 44px;
+                                border-left: 1px solid #29b2fb;
+                            }
+                        }
+                    }
+                }
+                .match-shedule-linebox-four{
+                    background: #0091de;
+                    i.ui-title{
+                        height:45px;
+                        width:110px;                        
+                        background:url(../images/match-icon.png) no-repeat;
+                        background-position: -186px 0;
+                    }
+                    .team-box{
+                        position: relative;
+                        top: 136px;
+                        left: 110px;
+                        width: 170px;
+                        margin-bottom: 82px;
+                        .team-name{
+                            width: 140px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            background: #29b2fb;
+                            color: #b8e6ff;
+                            font-size: 12px;
+                            font-family: arial;
+                            img{
+                                width: 35px;
+                                height: 15px;
+                                margin-right: 10px;
+                            }
+                        }
+                        .score{
+                            color: #b8e6ff;
+                            font-size: 12px;
+                            line-height: 169px;
+                            text-align: right;
+                            padding-right: 10px;
+                        }
+                        .team-box-line{
+                            position: absolute;
+                            top: 0;
+                            left: 140px;
+                            width: 150px;
+                            height: 230px;
+                            .line-top-left{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 30px;
+                                height: 15px;
+                                border-bottom: 1px solid #29b2fb;
+                            }
+                            .line-top-right{
+                                position: absolute;
+                                top: 15px;
+                                left: 30px;
+                                width: 230px;
+                                height: 100px;
+                                border-left: 1px solid #29b2fb;
+                                border-bottom: 1px solid #29b2fb;
+                            }
+                            .line-bottom-left{
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 30px;
+                                height: 15px;
+                                border-top: 1px solid #29b2fb;
+                            }
+                            .line-bottom-right{
+                                position: absolute;
+                                bottom: 15px;
+                                left: 30px;
+                                width: 120px;
+                                height: 100px;
+                                border-left: 1px solid #29b2fb;
+                            }
+                        }
+                    }
+                }
+                .match-shedule-linebox-champion{
+                    background: #069ceb;
+                    i.ui-title{
+                        height:45px;
+                        width:113px;
+                        background-position:0 -188px;
+                    }
+                    .team-box{
+                        position: relative;
+                        top: 236px;
+                        left: 110px;
+                        width: 170px;
+                        margin-bottom: 82px;
+                        .team-name{
+                            width: 140px;
+                            height: 30px;
+                            line-height: 30px;
+                            text-align: center;
+                            background: #29b2fb;
+                            color: #b8e6ff;
+                            font-size: 12px;
+                            font-family: arial;
+                            img{
+                                width: 35px;
+                                height: 15px;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+                &:after{
+                    .clear-float;
+                }
+            }
+        }
+        .match-score-box{
+            position: relative;
+            background: #29b2fb;
+            i.match-score-back{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                display: block;
+                width: 100%;
+                height: 2056px;
+                background: url('../images/bottom-back.png') no-repeat center;
+            }
+        }
+        .match-score{
+            width: 1200px;
+            height: 363px;
+            margin: 10px auto;
+            background: #0091de;
+            padding-top: 36px;
+            i.title{
+                display: block;
+                height:35px;
+                width:573px;
+                margin: 0 auto 37px;
+                background:url(../images/sprite.png) no-repeat;
+                background-position:-426px -106px;
+            }
+            table{
+                width: 1000px;
+                margin: 0 auto;
+                border-right:1px solid #29b2fb;
+                border-bottom:1px solid #29b2fb;
+                tr{
+                    text-align: center;
+                    line-height: 45px;
+                    font-size: 14px;
+                    th{
+                        color: #e8f7ff;
+                        border-left:1px solid #29b2fb;
+                        border-top:1px solid #29b2fb;
+                        font-size: 18px;
+                    }
+                    td{
+                        color: #86d5ff;
+                        border-left:1px solid #29b2fb;
+                        border-top:1px solid #29b2fb;
+                        img{
+                            width: 35px;
+                            height: 15px;
+                            margin-right: 10px;
+                        }
+                    }
+                    td:nth-of-type(2){
+                        width: 416px;
+                        text-align: left;
+                        img{
+                            float: left;
+                            margin: 15px 20px 0 150px;
+                        }
+                    }
+                }
+            }
+            &.match-score-b{
+                i.title{
+                    height:35px;
+                    width:571px;
+                    background-position:-427px -50px;
+                }
+            }
+            &.match-score-c{
+                i.title{
+                    height:35px;
+                    width:571px;
+                    background:url(../images/match-name-icon.png) no-repeat;
+                    background-position: 0 100%;
+                }
+            }
+            &.match-score-d{
+                i.title{
+                    height:35px;
+                    width:571px;
+                    background:url(../images/match-name-icon.png) no-repeat;
+                    background-position: 0 0;
+                }
+            }
+        }
+        .image-box{
+            position: relative;
+            min-width: 1200px;
+            height: 350px;
+            padding-top: 30px;
+            .image-box-body{
+                width: 1200px;
+                margin: 0 auto;
+                .title{
+                    display: block;
+                    height:30px;
+                    width:158px;
+                    background:url(../images/sprite.png) no-repeat;
+                    background-position:0 -143px;
+                    margin-bottom: 24px;
+                }
+                ul{
+                    height: 200px;
+                    overflow: hidden;
+                    li{
+                        float: left;
+                        width: 290px;
+                        height: 200px;
+                        margin: 0 13px 12px 0;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    li:nth-of-type(4n){
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
