@@ -29,6 +29,12 @@ var path = {
   build : "build"
 };
 
+gulp.task('designRemove', function(){
+    gulp.src(['dist/*.html'])
+        .pipe(replace(/<script.*design.*<\/script>/i, ''))
+        .pipe(gulp.dest('dist/'));
+});
+
 gulp.task('imgMin', function () {
     gulp.src(path.img + "*.*")
         .pipe(imageMin({
@@ -53,7 +59,7 @@ gulp.task('jsconcat',function () {
 gulp.task('jsconcat-plugin',function () {
     return gulp.src([
         'src/js/vendor/jquery-2.2.4.js',
-        'src/js/vendor/swiper-3.3.1.jquery.min.js'
+        'src/js/vendor/swiper-3.4.0.jquery.min.js'
         ])
         .pipe(concat('vendor.js'))//合并后的文件名
         .pipe(gulp.dest('output/'));
@@ -307,7 +313,7 @@ gulp.task('connectDev-less', function() {
 
 //gulp.task('build', ['clean','jsconcat','jsmin']);
 
-gulp.task('build', gulpSequence('clean','jsconcat','jsconcat-plugin','jsmin','cssconcat','cssconcat-plugin','cssmin','cssRev','movejs','movecss','AutoFx',['dist','distres','rev'],'htmlmin','replace','replace-sec','move-page-js','imgMin'));
+gulp.task('build', gulpSequence('clean','jsconcat','jsconcat-plugin','jsmin','cssconcat','cssconcat-plugin','cssmin','cssRev','movejs','movecss','AutoFx',['dist','distres','rev'],'htmlmin','replace','replace-sec','move-page-js','imgMin','designRemove'));
 
 //gulp.task('dev', ['connectDev', 'watch','less']);
 

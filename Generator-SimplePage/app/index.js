@@ -87,7 +87,7 @@ prt.copyFile = function(){
     this.copy('animate.less','src/less/animate.less');
     this.copy('common.less','src/less/common.less');
     this.copy('reset.less','src/less/reset.less');
-    this.copy('swiper-3.3.1.jquery.min.js','src/js/vendor/swiper-3.3.1.jquery.min.js')
+    this.copy('swiper-3.4.0.jquery.min.js','src/js/vendor/swiper-3.4.0.jquery.min.js')
     this.copy('_mixins/background-variant.less','src/less/_mixins/background-variant.less');
     this.copy('_mixins/border-radius.less','src/less/_mixins/border-radius.less');
     this.copy('_mixins/buttons.less','src/less/_mixins/buttons.less');
