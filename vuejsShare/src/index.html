@@ -77,11 +77,13 @@
                 </section>
                 <section>
                     <pre><code>
-                        &lt;div v-bind:id="bindId"&gt;
-                        &lt;img v-bind:src="imgSrc"&gt;
                         &lt;p v-if="flag"&gt;Hi~
                         &lt;p v-show="flag"&gt;Hi~
                         &lt;a v-on:click="fn"&gt;
+                        &lt;div v-bind:id="bindId"&gt;
+                        &lt;img v-bind:src="imgSrc"&gt;
+                        &lt;div v-bind:class="{ active: isActive }"&gt;
+                        &lt;li v-for="item in items"&gt;
                     </code></pre>
                 </section>
             </section>
@@ -97,10 +99,10 @@
                     <img src="../images/mvvm2.png" />
                 </section>
                 <section>
-                    <img src="../images/codeMvvm.png" />
+                    <img src="../images/mvvm.png" />
                 </section>
                 <section>
-                    <img src="../images/mvvm.png" />
+                    <img src="../images/codeMvvm.png" />
                 </section>
             </section>  
             <section>
