@@ -221,6 +221,9 @@
   width: 1200px;
   margin: 0 auto;
 }
+h5 {
+  text-align: right;
+}
 
 /*@import "_mixins/list-group.less";*/
 html {
