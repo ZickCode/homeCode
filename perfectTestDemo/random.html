@@ -1,0 +1,25 @@
+<!-- 在页面随机位置出现随机颜色的div -->
+<!doctype html>
+<html>
+	<head>
+		<style>
+			div{
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="show">
+		<script src="js/jquery-2.2.4.js"></script>
+		<script>
+			$('#btn').on('click', function(){
+				for(var i=0;i<500;i++){
+					$('body').append('<div style="top:'+ Math.random()*800 +'px;left:'+ Math.random()*1800 +'px;background:#'+ Math.floor(Math.random()*16777215).toString(16) +';"></div>');
+				}
+			});
+		</script>
+	</body>
+</html>
