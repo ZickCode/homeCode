@@ -1,0 +1,38 @@
+<!-- 模拟锤子手机官网鼠标移入按压效果 -->
+<!doctype html>
+<html>
+	<head>
+		<style>
+			#box{
+				width: 300px;
+				height: 300px;
+				margin: 100px auto;
+				background: black;
+				border-radius: 5px;
+				border: 1px solid #999;
+				transform: rotateX(0deg) rotateY(0deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script src="js/jquery-2.2.4.js"></script>
+		<script>
+			$('#box').mousemove(function(event) {
+				var mX = event.offsetX,
+					mY = event.offsetY,
+					cX = $(this).width()/2,
+					cY = $(this).height()/2;
+				var dX = mX - cX,
+					dY = mY - cY;
+				dY = (mX < cX && mY < cY) || (mX > cX && mY < cY) ? -dY : dY;
+				$(this).css({					
+					transform: 'rotateX('+dX/10+'deg) rotateY('+dY/10+'deg)'
+				});
+			});
+			$('#box').mouseleave(function(event) {
+				$(this).css('transform','');
+			});
+		</script>
+	</body>
+</html>
