@@ -1,7 +1,7 @@
 <template name="magic" lang="jade">
 	.magic
 		ul.am-nav.am-nav-tabs.am-nav-justify
-			li(v-for="item in ProfessionalName" @click="switchNav")
+			li(v-for="(item, index) in ProfessionalName" v-bind:class="{'am-active': index == 0}" @click="switchNav")
 				a(v-text="item")
 		h2 异界套装
 		table.am-table.am-table-bordered.am-table-radius.am-table-striped.am-table-hover.am-table-centered
@@ -10,7 +10,7 @@
 					td 
 					td(v-for="item in partName" v-text="item")
 			tbody
-				tr(v-for="item in suitInfo.outsider")
+				tr(v-for="(item, index) in suitInfo.outsider")
 					td(v-text="item.name")
 					td
 						i.fa-check(v-if="item.shoulder == 1")
@@ -52,7 +52,7 @@
 					td 
 					td(v-for="(item, index) in partName" v-if="index < 5" v-text="item")
 			tbody
-				tr(v-for="item in suitInfo.epicArmor" v-bind:class="{'am-success': (item.shoulder == 1 && item.jacket == 1 && item.pants == 1 && item.belt == 1 && item.shoes == 1)}")
+				tr(v-for="item in suitInfo.epicArmor" v-bind:class="{'am-success': (item.shoulder == 1 && item.jacket == 1 && item.pants == 1 && item.belt == 1 && item.shoes == 1), 'am-danger': (item.shoulder == 0 && item.jacket == 0 && item.pants == 0 && item.belt == 0 && item.shoes == 0)}")
 					td(v-text="item.name")
 					td
 						i.fa-check(v-if="item.shoulder == 1")
@@ -67,6 +67,22 @@
 						i.fa-check(v-if="item.belt == 1")
 						i.fa-close(v-if="item.belt == 0")
 					td
+						i.fa-check(v-if="item.shoes == 1")
+						i.fa-close(v-if="item.shoes == 0")
+		h2 史诗防具散件
+		table.am-table.am-table-bordered.am-table-radius.am-table-striped.am-table-hover.am-table-centered(style="width=50% ")
+			tbody
+				tr(v-for="(item, index) in suitInfo.epicArmorParts")
+					td(v-text="item.name")
+					td
+						i.fa-check(v-if="item.shoulder == 1")
+						i.fa-close(v-if="item.shoulder == 0")
+						i.fa-check(v-if="item.jacket == 1")
+						i.fa-close(v-if="item.jacket == 0")
+						i.fa-check(v-if="item.pants == 1")
+						i.fa-close(v-if="item.pants == 0")
+						i.fa-check(v-if="item.belt == 1")
+						i.fa-close(v-if="item.belt == 0")
 						i.fa-check(v-if="item.shoes == 1")
 						i.fa-close(v-if="item.shoes == 0")
 		h2 史诗首饰
