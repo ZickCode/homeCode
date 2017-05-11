@@ -1,5 +1,4 @@
 {
-    "ProfessionalName": ["战斗法师", "神思者", "念帝", "天帝"],
     "partName": ["肩膀", "上衣", "下装", "腰带", "鞋子", "手镯", "项链", "戒指", "左槽", "右槽", "武器"],
     "suitInfo": {
         "outsider": [
@@ -108,9 +107,10 @@
                 "name": "天劫",
                 "shoulder": 1,
                 "jacket": 1,
-                "pants": 0,
+                "pants": 1,
                 "belt": 0,
-                "shoes": 1
+                "shoes": 1,
+                "num": 4
             },
             {
                 "name": "释魔之力",
@@ -118,7 +118,8 @@
                 "jacket": 1,
                 "pants": 1,
                 "belt": 1,
-                "shoes": 1
+                "shoes": 1,
+                "num": 5
             },
             {
                 "name": "上元节祭典",
@@ -126,7 +127,8 @@
                 "jacket": 1,
                 "pants": 0,
                 "belt": 1,
-                "shoes": 0
+                "shoes": 0,
+                "num": 3
             },
             {
                 "name": "杀意决",
@@ -134,7 +136,8 @@
                 "jacket":  1,
                 "pants": 1,
                 "belt": 0,
-                "shoes": 1
+                "shoes": 1,
+                "num": 4
             },
             {
                 "name": "战术之王的御敌",
@@ -142,7 +145,8 @@
                 "jacket":  0,
                 "pants": 1,
                 "belt": 1,
-                "shoes": 1
+                "shoes": 1,
+                "num": 3
             },
             {
                 "name": "时光的轨迹",
@@ -150,7 +154,8 @@
                 "jacket": 0,
                 "pants": 0,
                 "belt": 0,
-                "shoes": 0
+                "shoes": 0,
+                "num": 0
             },
             {
                 "name": "天御之灾",
@@ -158,7 +163,8 @@
                 "jacket":  0,
                 "pants": 0,
                 "belt": 1,
-                "shoes": 0
+                "shoes": 0,
+                "num": 1
             },
             {
                 "name": "最佳球手的绝杀",
@@ -166,7 +172,8 @@
                 "jacket":  1,
                 "pants": 0,
                 "belt": 0,
-                "shoes": 1
+                "shoes": 1,
+                "num": 3
             },
             {
                 "name": "黄金战甲的荣耀",
@@ -174,7 +181,8 @@
                 "jacket": 0,
                 "pants": 1,
                 "belt": 0,
-                "shoes": 0
+                "shoes": 0,
+                "num": 1
             },
             {
                 "name": "誓血之盟",
@@ -190,7 +198,8 @@
                 "jacket":  0,
                 "pants": 0,
                 "belt": 1,
-                "shoes": 0
+                "shoes": 0,
+                "num": 1
             },
             {
                 "name": "千年战争",
@@ -198,7 +207,8 @@
                 "jacket": 0,
                 "pants": 1,
                 "belt": 1,
-                "shoes": 0
+                "shoes": 0,
+                "num": 2
             },
             {
                 "name": "魔战无双",
@@ -206,7 +216,8 @@
                 "jacket":  1,
                 "pants": 0,
                 "belt": 0,
-                "shoes": 1
+                "shoes": 1,
+                "num": 3
             },
             {
                 "name": "霸域英豪",
@@ -214,7 +225,8 @@
                 "jacket":  1,
                 "pants": 0,
                 "belt": 1,
-                "shoes": 0
+                "shoes": 0,
+                "num": 3
             },
             {
                 "name": "星辰命运",
@@ -222,7 +234,8 @@
                 "jacket": 0,
                 "pants": 1,
                 "belt": 0,
-                "shoes": 1
+                "shoes": 1,
+                "num": 3
             }
         ],
         "epicArmorParts": [
@@ -332,25 +345,29 @@
                 "name": "冰雪公主的霜语首饰",
                 "bracelet": 1,
                 "necklace": 1,
-                "ring": 1
+                "ring": 1,
+                "num": 3
             },
             {
                 "name": "精炼的异界魔石首饰",
                 "bracelet": 1,
                 "necklace": 1,
-                "ring": 0
+                "ring": 0,
+                "num": 2
             },
             {
                 "name": "星空的旅行者",
                 "bracelet": 1,
                 "necklace": 0,
-                "ring": 0
+                "ring": 0,
+                "num": 1
             },
             {
                 "name": "恍惚之境",
                 "bracelet": 0,
                 "necklace": 1,
-                "ring": 1
+                "ring": 1,
+                "num": 2
             }
         ]
     }

@@ -1,8 +1,5 @@
-<template name="magic" lang="jade">
-	.magic
-		ul.am-nav.am-nav-tabs.am-nav-justify
-			li(v-for="(item, index) in ProfessionalName" v-bind:class="{'am-active': index == 0}" @click="switchNav")
-				a(v-text="item")
+<template lang="jade">
+	.switch-box.magic
 		h2 异界套装
 		table.am-table.am-table-bordered.am-table-radius.am-table-striped.am-table-hover.am-table-centered
 			thead
@@ -52,7 +49,7 @@
 					td 
 					td(v-for="(item, index) in partName" v-if="index < 5" v-text="item")
 			tbody
-				tr(v-for="item in suitInfo.epicArmor" v-bind:class="{'am-success': (item.shoulder == 1 && item.jacket == 1 && item.pants == 1 && item.belt == 1 && item.shoes == 1), 'am-danger': (item.shoulder == 0 && item.jacket == 0 && item.pants == 0 && item.belt == 0 && item.shoes == 0)}")
+				tr(v-for="item in suitInfo.epicArmor" v-bind:class="{'am-success': item.num == 5, 'am-danger': item.num == 0}")
 					td(v-text="item.name")
 					td
 						i.fa-check(v-if="item.shoulder == 1")
@@ -70,7 +67,7 @@
 						i.fa-check(v-if="item.shoes == 1")
 						i.fa-close(v-if="item.shoes == 0")
 		h2 史诗防具散件
-		table.am-table.am-table-bordered.am-table-radius.am-table-striped.am-table-hover.am-table-centered(style="width=50% ")
+		table.am-table.am-table-bordered.am-table-radius.am-table-striped.am-table-hover.am-table-centered.epicArmorParts
 			tbody
 				tr(v-for="(item, index) in suitInfo.epicArmorParts")
 					td(v-text="item.name")
@@ -87,25 +84,25 @@
 						i.fa-close(v-if="item.shoes == 0")
 		h2 史诗首饰
 		table.am-table.am-table-bordered.am-table-radius.am-table-striped.am-table-hover.am-table-centered
-			thead
-				tr
-					td 
-					td(v-for="(item, index) in partName" v-if="index > 4 && index < 8" v-text="item")
-			tbody
-				tr(v-for="item in suitInfo.epicJewelry" v-bind:class="{'am-success': (item.bracelet == 1 && item.necklace == 1 && item.ring == 1)}")
-					td(v-text="item.name")
-					td
-						i.fa-check(v-if="item.bracelet == 1")
-						i.fa-close(v-if="item.bracelet == 0")
-					td
-						i.fa-check(v-if="item.necklace == 1")
-						i.fa-close(v-if="item.necklace == 0")
-					td
-						i.fa-check(v-if="item.ring == 1")
-						i.fa-close(v-if="item.ring == 0")
+				thead
+					tr
+						td 
+						td(v-for="(item, index) in partName" v-if="index > 4 && index < 8" v-text="item")
+				tbody
+					tr(v-for="item in suitInfo.epicJewelry" v-bind:class="{'am-success': item.num == 3, 'am-danger': item.num == 0}")
+						td(v-text="item.name")
+						td
+							i.fa-check(v-if="item.bracelet == 1")
+							i.fa-close(v-if="item.bracelet == 0")
+						td
+							i.fa-check(v-if="item.necklace == 1")
+							i.fa-close(v-if="item.necklace == 0")
+						td
+							i.fa-check(v-if="item.ring == 1")
+							i.fa-close(v-if="item.ring == 0")
 </template>
 
-<style lang='scss' scope>
+<style lang='scss' scoped>
 	.am-nav{
 		li{
 			cursor: pointer;
@@ -115,10 +112,8 @@
 
 <script>
 	export default {
-		name: 'magic',
 		data: function(){
 			return {
-				ProfessionalName: [],
 				partName: [],
 				suitInfo: [
 					{
@@ -138,11 +133,6 @@
 				]
 			}
 		},
-		methods: {
-			switchNav: function(event){
-				$(event.target).parent().addClass('am-active').siblings('li').removeClass('am-active');
-			}
-		},
 		mounted: function(){
 			var self = this;
 			self.$nextTick(function(){
@@ -151,7 +141,6 @@
 					type: 'get',
 					dataType: 'json',
 					success: function(data){					
-							self.ProfessionalName = data.ProfessionalName;
 							self.partName = data.partName;
 							self.suitInfo = data.suitInfo;	
 					}
