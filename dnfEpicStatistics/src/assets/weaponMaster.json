@@ -9,40 +9,40 @@
                 "pants": 1,
                 "belt": 1,
                 "shoes": 1,
-                "bracelet": 1,
+                "bracelet": 0,
                 "necklace": 1,
                 "ring": 1,
                 "leftDiamonds": 1,
                 "rightDiamonds": 1,
-                "weapons": 0
+                "weapons": 1
             },
             {
                 "name": "精·苍鹰之眸",
-                "shoulder": 0,
+                "shoulder": 1,
                 "jacket": 0,
                 "pants": 0,
                 "belt": 0,
                 "shoes": 0,
-                "bracelet": 0,
+                "bracelet": 1,
                 "necklace": 0,
-                "ring": 0,
+                "ring": 1,
                 "leftDiamonds": 0,
-                "rightDiamonds": 0,
+                "rightDiamonds": 1,
                 "weapons": 0
             },
             {
                 "name": "精·秘技传授者",
                 "shoulder": 0,
-                "jacket": 0,
-                "pants": 0,
-                "belt": 0,
+                "jacket": 1,
+                "pants": 1,
+                "belt": 1,
                 "shoes": 0,
                 "bracelet": 0,
                 "necklace": 0,
-                "ring": 0,
-                "leftDiamonds": 0,
+                "ring": 1,
+                "leftDiamonds": 1,
                 "rightDiamonds": 0,
-                "weapons": 0
+                "weapons": 1
             },
             {
                 "name": "冽风之痕",
@@ -50,13 +50,13 @@
                 "jacket": 0,
                 "pants": 0,
                 "belt": 0,
-                "shoes": 0,
-                "bracelet": 0,
+                "shoes": 1,
+                "bracelet": 1,
                 "necklace": 0,
                 "ring": 0,
                 "leftDiamonds": 0,
                 "rightDiamonds": 0,
-                "weapons": 0
+                "weapons": 1
             },
             {
                 "name": "七伤剑气",
@@ -67,38 +67,38 @@
                 "shoes": 0,
                 "bracelet": 0,
                 "necklace": 0,
-                "ring": 0,
-                "leftDiamonds": 0,
+                "ring": 1,
+                "leftDiamonds": 1,
                 "rightDiamonds": 0,
-                "weapons": 0
+                "weapons": 1
             },
             {
                 "name": "潜龙幻影",
-                "shoulder": 0,
+                "shoulder": 1,
                 "jacket": 0,
                 "pants": 0,
-                "belt": 0,
+                "belt": 1,
                 "shoes": 0,
                 "bracelet": 0,
-                "necklace": 0,
-                "ring": 0,
+                "necklace": 1,
+                "ring": 1,
                 "leftDiamonds": 0,
                 "rightDiamonds": 0,
-                "weapons": 0
+                "weapons": 1
             },
             {
                 "name": "天之剑痕",
                 "shoulder": 0,
-                "jacket": 0,
+                "jacket": 1,
                 "pants": 0,
-                "belt": 0,
+                "belt": 1,
                 "shoes": 0,
                 "bracelet": 0,
                 "necklace": 0,
                 "ring": 0,
-                "leftDiamonds": 0,
+                "leftDiamonds": 1,
                 "rightDiamonds": 0,
-                "weapons": 0
+                "weapons": 1
             }
         ]
     }
