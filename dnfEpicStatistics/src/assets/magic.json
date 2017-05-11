@@ -170,10 +170,10 @@
                 "name": "最佳球手的绝杀",
                 "shoulder": 1,
                 "jacket":  1,
-                "pants": 0,
+                "pants": 1,
                 "belt": 0,
                 "shoes": 1,
-                "num": 3
+                "num": 4
             },
             {
                 "name": "黄金战甲的荣耀",
