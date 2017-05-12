@@ -108,10 +108,14 @@
 			cursor: pointer;
 		}
 	}
+	.epicArmorParts{
+		width: 50%;
+	}
 </style>
 
 <script>
 	export default {
+		props: ['outPath'],
 		data: function(){
 			return {
 				partName: [],
@@ -135,9 +139,10 @@
 		},
 		mounted: function(){
 			var self = this;
+			var url = (window.location.host == '' || !window.location.host.indexOf("127.0.0.1") || !window.location.host.indexOf("192.168.")) ? 'dnfEpicStatistics/src/assets/magic.json' : 'src/assets/magic.json';
 			self.$nextTick(function(){
 				$.ajax({
-					url: 'src/assets/magic.json',
+					url: url,
 					type: 'get',
 					dataType: 'json',
 					success: function(data){					

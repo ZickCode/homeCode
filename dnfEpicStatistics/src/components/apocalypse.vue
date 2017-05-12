@@ -72,9 +72,10 @@
 		},
 		mounted: function(){
 			var self = this;
+      var url = (window.location.host == '' || !window.location.host.indexOf("127.0.0.1") || !window.location.host.indexOf("192.168.")) ? 'dnfEpicStatistics/src/assets/apocalypse.json' : 'src/assets/apocalypse.json';
 			self.$nextTick(function(){
 				$.ajax({
-					url: 'src/assets/apocalypse.json',
+					url: url,
 					type: 'get',
 					dataType: 'json',
 					success: function(data){					
