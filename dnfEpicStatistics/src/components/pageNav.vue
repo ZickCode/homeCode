@@ -28,7 +28,7 @@
 		},
 		mounted: function(){
 			var self = this;
-			var url = (window.location.host == '' || !window.location.host.indexOf("localhost") || !window.location.host.indexOf("127.0.0.1") || !window.location.host.indexOf("192.168.")) ? 'src/assets/weaponMaster.json' : 'dnfEpicStatistics/src/assets/weaponMaster.json';
+			var url = (window.location.host == '' || !window.location.host.indexOf("localhost") || !window.location.host.indexOf("127.0.0.1") || !window.location.host.indexOf("192.168.")) ? 'src/assets/pageNav.json' : 'dnfEpicStatistics/src/assets/pageNav.json';
 			self.$nextTick(function(){
 				$.ajax({
 					url: url,
