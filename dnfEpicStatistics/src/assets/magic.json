@@ -142,20 +142,20 @@
             {
                 "name": "战术之王的御敌",
                 "shoulder": 0,
-                "jacket":  0,
+                "jacket":  1,
                 "pants": 1,
                 "belt": 1,
                 "shoes": 1,
-                "num": 3
+                "num": 4
             },
             {
                 "name": "时光的轨迹",
-                "shoulder": 0,
+                "shoulder": 1,
                 "jacket": 0,
                 "pants": 0,
                 "belt": 0,
                 "shoes": 0,
-                "num": 0
+                "num": 1
             },
             {
                 "name": "天御之灾",
@@ -163,8 +163,8 @@
                 "jacket":  0,
                 "pants": 0,
                 "belt": 1,
-                "shoes": 0,
-                "num": 1
+                "shoes": 1,
+                "num": 2
             },
             {
                 "name": "最佳球手的绝杀",
@@ -180,44 +180,45 @@
                 "shoulder": 0,
                 "jacket": 0,
                 "pants": 1,
-                "belt": 0,
-                "shoes": 0,
-                "num": 1
-            },
-            {
-                "name": "誓血之盟",
-                "shoulder": 0,
-                "jacket":  0,
-                "pants": 0,
-                "belt": 1,
-                "shoes": 1
-            },
-            {
-                "name": "千蛛碎影",
-                "shoulder": 0,
-                "jacket":  0,
-                "pants": 0,
-                "belt": 1,
-                "shoes": 0,
-                "num": 1
-            },
-            {
-                "name": "千年战争",
-                "shoulder": 0,
-                "jacket": 0,
-                "pants": 1,
                 "belt": 1,
                 "shoes": 0,
                 "num": 2
             },
             {
+                "name": "誓血之盟",
+                "shoulder": 0,
+                "jacket":  0,
+                "pants": 1,
+                "belt": 1,
+                "shoes": 1,
+                "num": 3
+            },
+            {
+                "name": "千蛛碎影",
+                "shoulder": 1,
+                "jacket":  0,
+                "pants": 0,
+                "belt": 1,
+                "shoes": 0,
+                "num": 2
+            },
+            {
+                "name": "千年战争",
+                "shoulder": 1,
+                "jacket": 0,
+                "pants": 1,
+                "belt": 1,
+                "shoes": 0,
+                "num": 3
+            },
+            {
                 "name": "魔战无双",
                 "shoulder": 1,
                 "jacket":  1,
-                "pants": 0,
-                "belt": 0,
+                "pants": 1,
+                "belt": 1,
                 "shoes": 1,
-                "num": 3
+                "num": 5
             },
             {
                 "name": "霸域英豪",
@@ -309,7 +310,7 @@
             },
             {
                 "name": "禁忌之影护腿",
-                "pants": 0
+                "pants": 1
             },
             {
                 "name": "禁忌之痕腰带",
