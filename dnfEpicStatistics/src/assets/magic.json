@@ -171,9 +171,9 @@
                 "shoulder": 1,
                 "jacket":  1,
                 "pants": 1,
-                "belt": 0,
+                "belt": 1,
                 "shoes": 1,
-                "num": 4
+                "num": 5
             },
             {
                 "name": "黄金战甲的荣耀",
