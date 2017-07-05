@@ -1,7 +1,4 @@
 <template lang="jade">
-	// ul.am-nav.am-nav-tabs.am-nav-justify
-	// 	li(v-for="(item, index) in ProfessionalName" v-bind:class="{'am-active': index == 0}" @click="switchNav")
-	// 		a(v-text="item")
 	.nav
 		.menu
 			ul

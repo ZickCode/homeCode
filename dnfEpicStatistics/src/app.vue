@@ -11,6 +11,10 @@
 <style lang="scss">
 	.container{
 		.switch-box{
+			display: none;
+			&:nth-child(2){
+				display: block;
+			}
 			table.am-table{
 				table-layout: fixed;
 				tr{
