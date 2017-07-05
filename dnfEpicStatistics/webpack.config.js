@@ -4,7 +4,10 @@ var path = require('path'),
 
 module.exports = {
   //入口文件
-  entry: './src/main.js',
+  entry: {
+    main: './src/main.js',
+    vendor: ['vue', 'jquery']
+  },
   //输入配置
   output: {
     //输出到项目根目录下的dist文件夹
@@ -60,6 +63,10 @@ module.exports = {
       $: "jquery",
       'window.jQuery': 'jquery',
       'window.$': 'jquery',
+    }),
+    //提取公共插件js
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor']
     })
   ],
   //开发服务器配置

@@ -1,0 +1,303 @@
+{
+    "partName": ["肩膀", "上衣", "下装", "腰带", "鞋子", "手镯", "项链", "戒指", "左槽", "右槽", "武器"],
+    "suitInfo": {
+        "outsider": [
+            {
+                "name": "精·寂静的祈祷者",
+                "data": [
+                    {
+                        "part": "肩膀",
+                        "status": 1
+                    },
+                    {
+                        "part": "上衣",
+                        "status": 1
+                    },
+                    {
+                        "part": "下装",
+                        "status": 0
+                    },
+                    {
+                        "part": "腰带",
+                        "status": 0
+                    },
+                    {
+                        "part": "鞋子",
+                        "status": 0
+                    },
+                    {
+                        "part": "手镯",
+                        "status": 1
+                    },
+                    {
+                        "part": "项链",
+                        "status": 1
+                    },
+                    {
+                        "part": "戒指",
+                        "status": 0
+                    },
+                    {
+                        "part": "左槽",
+                        "status": 0
+                    },
+                    {
+                        "part": "右槽",
+                        "status": 0
+                    },
+                    {
+                        "part": "武器",
+                        "status": 0
+                    }
+                ]
+            },
+            {
+                "name": "精·神之恩赐",
+                "data": [
+                    {
+                        "part": "肩膀",
+                        "status": 1
+                    },
+                    {
+                        "part": "上衣",
+                        "status": 0
+                    },
+                    {
+                        "part": "下装",
+                        "status": 0
+                    },
+                    {
+                        "part": "腰带",
+                        "status": 0
+                    },
+                    {
+                        "part": "鞋子",
+                        "status": 1
+                    },
+                    {
+                        "part": "手镯",
+                        "status": 0
+                    },
+                    {
+                        "part": "项链",
+                        "status": 0
+                    },
+                    {
+                        "part": "戒指",
+                        "status": 0
+                    },
+                    {
+                        "part": "左槽",
+                        "status": 1
+                    },
+                    {
+                        "part": "右槽",
+                        "status": 0
+                    },
+                    {
+                        "part": "武器",
+                        "status": 0
+                    }
+                ]
+            },
+            {
+                "name": "精·血之洗礼",
+                "data": [
+                    {
+                        "part": "肩膀",
+                        "status": 0
+                    },
+                    {
+                        "part": "上衣",
+                        "status": 1
+                    },
+                    {
+                        "part": "下装",
+                        "status": 0
+                    },
+                    {
+                        "part": "腰带",
+                        "status": 0
+                    },
+                    {
+                        "part": "鞋子",
+                        "status": 1
+                    },
+                    {
+                        "part": "手镯",
+                        "status": 0
+                    },
+                    {
+                        "part": "项链",
+                        "status": 0
+                    },
+                    {
+                        "part": "戒指",
+                        "status": 0
+                    },
+                    {
+                        "part": "左槽",
+                        "status": 0
+                    },
+                    {
+                        "part": "右槽",
+                        "status": 1
+                    },
+                    {
+                        "part": "武器",
+                        "status": 1
+                    }
+                ]
+            },
+            {
+                "name": "赤心之启示",
+                "data": [
+                    {
+                        "part": "肩膀",
+                        "status": 1
+                    },
+                    {
+                        "part": "上衣",
+                        "status": 1
+                    },
+                    {
+                        "part": "下装",
+                        "status": 0
+                    },
+                    {
+                        "part": "腰带",
+                        "status": 1
+                    },
+                    {
+                        "part": "鞋子",
+                        "status": 1
+                    },
+                    {
+                        "part": "手镯",
+                        "status": 0
+                    },
+                    {
+                        "part": "项链",
+                        "status": 1
+                    },
+                    {
+                        "part": "戒指",
+                        "status": 1
+                    },
+                    {
+                        "part": "左槽",
+                        "status": 0
+                    },
+                    {
+                        "part": "右槽",
+                        "status": 0
+                    },
+                    {
+                        "part": "武器",
+                        "status": 1
+                    }
+                ]
+            },
+            {
+                "name": "寂静之誓",
+                "data": [
+                    {
+                        "part": "肩膀",
+                        "status": 1
+                    },
+                    {
+                        "part": "上衣",
+                        "status": 1
+                    },
+                    {
+                        "part": "下装",
+                        "status": 1
+                    },
+                    {
+                        "part": "腰带",
+                        "status": 1
+                    },
+                    {
+                        "part": "鞋子",
+                        "status": 1
+                    },
+                    {
+                        "part": "手镯",
+                        "status": 1
+                    },
+                    {
+                        "part": "项链",
+                        "status": 1
+                    },
+                    {
+                        "part": "戒指",
+                        "status": 1
+                    },
+                    {
+                        "part": "左槽",
+                        "status": 0
+                    },
+                    {
+                        "part": "右槽",
+                        "status": 1
+                    },
+                    {
+                        "part": "武器",
+                        "status": 1
+                    }
+                ]
+            },
+            {
+                "name": "荣誉之呐喊",
+                "data": [
+                    {
+                        "part": "肩膀",
+                        "status": 0
+                    },
+                    {
+                        "part": "上衣",
+                        "status": 0
+                    },
+                    {
+                        "part": "下装",
+                        "status": 0
+                    },
+                    {
+                        "part": "腰带",
+                        "status": 0
+                    },
+                    {
+                        "part": "鞋子",
+                        "status": 0
+                    },
+                    {
+                        "part": "手镯",
+                        "status": 1
+                    },
+                    {
+                        "part": "项链",
+                        "status": 0
+                    },
+                    {
+                        "part": "戒指",
+                        "status": 1
+                    },
+                    {
+                        "part": "左槽",
+                        "status": 0
+                    },
+                    {
+                        "part": "右槽",
+                        "status": 0
+                    },
+                    {
+                        "part": "武器",
+                        "status": 1
+                    }
+                ]
+            }
+        ]
+    }
+    
+    
+}
