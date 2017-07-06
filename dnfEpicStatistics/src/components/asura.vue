@@ -1,6 +1,6 @@
 <template lang="jade">
 	.switch-box.asura
-		h1 阿修罗
+		h1 天帝
 		h2 异界套装
 		table.am-table.am-table-bordered.am-table-radius.am-table-striped.am-table-centered(v-for="(item, index) in suitInfo.outsider")
 			thead
