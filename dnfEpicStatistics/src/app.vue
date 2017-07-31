@@ -1,11 +1,7 @@
 <template lang="jade">
 	.container
 		page-nav
-		magic
-		asura
-		apocalypse
-		nen-master
-		weapon-master
+		router-view
 </template>
 
 <style lang="scss">

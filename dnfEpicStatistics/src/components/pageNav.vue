@@ -3,7 +3,11 @@
 		.menu
 			ul
 				li(v-for="(item, index) in ProfessionalName" v-bind:class="{'am-active': index == 0}" @click="switchNav")
-					a(v-text="item")		
+					router-link(v-text="item" v-if="index == 0" to='/components/magic')
+					router-link(v-text="item" v-if="index == 1" to='/components/asura')		
+					router-link(v-text="item" v-if="index == 2" to='/components/apocalypse')		
+					router-link(v-text="item" v-if="index == 3" to='/components/nenMaster')		
+					router-link(v-text="item" v-if="index == 4" to='/components/weaponMaster')		
 		i.icon-menu(@click = 'switchIcon')
 </template>
 
@@ -100,9 +104,9 @@
 				}				
 			},
 			switchNav: function(event){
-				var _index = $(event.target).parent().index();
-				$(event.target).parent().addClass('am-active').siblings('li').removeClass('am-active');
-				$('.switch-box').eq(_index).css('display','block').siblings('.switch-box').hide();
+				// var _index = $(event.target).parent().index();
+				// $(event.target).parent().addClass('am-active').siblings('li').removeClass('am-active');
+				// $('.switch-box').eq(_index).css('display','block').siblings('.switch-box').hide();
 				$('.icon-close').addClass('rotate-back').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 					$('.icon-close').removeClass().addClass('icon-menu');
 				});
