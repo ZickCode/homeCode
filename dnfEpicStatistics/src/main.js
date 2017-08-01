@@ -12,7 +12,7 @@ function preload(arr) {
         images[i].src = arr[i]  
     }  
 }  
-preload(['http://localhost:8000/dist/close.png'])  
+preload(['dist/close.png'])  
 //使用路由
 Vue.use(VueRouter);
 const routes = [
