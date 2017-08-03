@@ -4,6 +4,15 @@ import VueRouter from 'vue-router';
 import flexible from 'lib-flexible';
 //引入页面vue
 import App from './app.vue';
+//图片预加载
+var images = new Array();
+function preload(arr) {  
+    for (var i = 0; i < arr.length; i++) {  
+        images[i] = new Image()  
+        images[i].src = arr[i]  
+    }  
+}  
+preload(['dist/close.png'])  
 //使用路由
 Vue.use(VueRouter);
 const routes = [
@@ -14,10 +23,10 @@ const routes = [
     {path: '/components/nenMaster', component: App.components.nenMaster},
     {path: '/components/weaponMaster', component: App.components.weaponMaster}
 ];
-var router = new VueRouter({
+const router = new VueRouter({
     routes
 });
-//vue实例                       
+//vue实例
 new Vue({
     el:'#app',
     render: h => h(App),

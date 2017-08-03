@@ -43,12 +43,12 @@ module.exports = {
         test: /\.css$/,
         loader: 'style-loader!css-loader!autoprefixer-loader?browsers=last 4 version'
       },
-      //处理图片并加上hash防止缓存
+      //处理图片
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: '[name].[ext]'
         }
       }
     ]
