@@ -506,11 +506,11 @@
             },
             {
                 "name": "天御之灾",
-                "num": 4,
+                "num": 5,
                 "data": [
                     {
                         "part": "肩膀",
-                        "status": 0
+                        "status": 1
                     },
                     {
                         "part": "上衣",
