@@ -22,8 +22,8 @@
             queue.on("progress", function(e){
                 console.log((e.progress*100).toFixed(2))
                 if(e.progress >= 1){
-                    document.getElementsByClassName('black')[0].style.display = 'none';
                     document.getElementsByClassName('loading')[0].style.display = 'none';
+                    document.getElementsByClassName('black')[0].style.display = 'none';
                 }
             }, this);
         </script>
