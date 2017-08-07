@@ -67,6 +67,15 @@ module.exports = {
     //提取公共插件js
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendor']
+    }),
+    //压缩js
+    new webpack.optimize.UglifyJsPlugin({
+      output: {
+        comments: false,
+      },
+      compress: {
+        warnings: false
+      }
     })
   ],
   //开发服务器配置
