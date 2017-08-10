@@ -52,9 +52,6 @@
 						i.fa-close(v-if="item.status == 0")
 </template>
 
-<style lang='scss' scoped>
-</style>
-
 <script>
 	export default {
 		props: ['outPath'],
@@ -68,15 +65,11 @@
 			var self = this;
 			var url = (window.location.host == '' || !window.location.host.indexOf("localhost") || !window.location.host.indexOf("127.0.0.1") || !window.location.host.indexOf("192.168.")) ? 'src/assets/mock/magic.json' : 'dnfEpicStatistics/src/assets/mock/magic.json';
 			self.$nextTick(function(){
-				$.ajax({
-					url: url,
-					type: 'get',
-					dataType: 'json',
-					success: function(data){					
-							self.partName = data.partName;
-							self.suitInfo = data.suitInfo;	
-					}
-				})
+				this.$http.get(url).then(function(response){
+					var data = response.data;
+					self.partName = data.partName;
+				 	self.suitInfo = data.suitInfo;	
+				});
 			});
 		}
 	}

@@ -29,15 +29,11 @@
 			var self = this;
       		var url = (window.location.host == '' || !window.location.host.indexOf("localhost") || !window.location.host.indexOf("127.0.0.1") || !window.location.host.indexOf("192.168.")) ? 'src/assets/mock/weaponMaster.json' : 'dnfEpicStatistics/src/assets/mock/weaponMaster.json';
 			self.$nextTick(function(){
-				$.ajax({
-					url: url,
-					type: 'get',
-					dataType: 'json',
-					success: function(data){					
-						self.partName = data.partName;
-						self.suitInfo = data.suitInfo;	
-					}
-				})
+				this.$http.get(url).then(function(response){
+					var data = response.data;
+					self.partName = data.partName;
+				 	self.suitInfo = data.suitInfo;	
+				});
 			});
 		}
 	}

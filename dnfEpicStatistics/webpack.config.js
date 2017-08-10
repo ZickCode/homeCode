@@ -1,12 +1,13 @@
 //path对象，webpack对象
 var path = require('path'),
-    webpack = require('webpack');
+    webpack = require('webpack'),
+    BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   //入口文件
   entry: {
     main: './src/main.js',
-    vendor: ['vue', 'jquery']
+    vendor: ['vue']
   },
   //输入配置
   output: {
@@ -57,13 +58,6 @@ module.exports = {
   plugins: [
     //webpack热替换
     new webpack.HotModuleReplacementPlugin(),
-    //引入jquery
-    new webpack.ProvidePlugin({
-      jQuery: "jquery",
-      $: "jquery",
-      'window.jQuery': 'jquery',
-      'window.$': 'jquery',
-    }),
     //提取公共插件js
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendor']
@@ -76,7 +70,9 @@ module.exports = {
       compress: {
         warnings: false
       }
-    })
+    }),
+    //构建包图表
+    //new BundleAnalyzerPlugin()
   ],
   //开发服务器配置
   devServer: {
