@@ -1,5 +1,9 @@
 <script>
-export default {}
+export default {
+  onLaunch() {
+    wx.hideTabBar();
+  }
+}
 </script>
 
 <style>

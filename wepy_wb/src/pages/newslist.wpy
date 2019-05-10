@@ -1,0 +1,84 @@
+<template>
+    <view id="newsPage">
+    	<view class="searchView bgc-f">
+    		<view class="search t-c">
+    			<text class="zan-icon zan-icon-search font-s24 c-666"></text>
+    			<text class="font-s24 c-666"> 搜索</text>
+    		</view>
+    	</view>
+    	<view class="newsView">
+    		<newsList :newsData.sync="newsData"></newsList>
+    	</view>
+      <tabbar :tabbar.sync="tabbar"></tabbar>
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy';
+import newsList from '@/components/newslist';
+import tabbar from '@/components/tabbar'
+export default class NewsList extends wepy.page {
+    config = {
+      navigationBarTitleText: '我的消息'
+    }
+    components = {
+    	newsList,
+      tabbar
+    }
+    data = {
+    	newsData: [
+    		{
+    			headimgurl: '../images/asl2.jpg',
+    			nickname: '艾斯',
+    			time: '2019-03-18 16:00:00',
+    			content: '火拳艾斯火拳艾斯火拳艾斯火拳艾斯火拳艾斯火拳艾斯火拳艾斯火拳艾斯',
+    			number: 120
+    		},
+    		{
+    			headimgurl: '../images/asl.jpg',
+    			nickname: '萨博',
+    			time: '2019-03-18 16:00:00',
+    			content: '革命军二把手',
+    			number: 10
+    		},
+    		{
+    			headimgurl: '../images/asl1.jpg',
+    			nickname: '路飞',
+    			time: '2019-03-18 16:00:00',
+    			content: '橡胶',
+    			number: 1
+    		}
+    	],
+      tabbar: null,
+    }
+    methods = {}
+    onLoad() {
+        // console.log(this.$parent.editTabbar())
+        console.log('消息列表--如果重新开启页面, 这一行会再次打印, 反之--')  
+    }
+    onShow() {
+        this.tabbar = this.$parent.editTabbar();
+        this.$apply();
+        console.log("消息列表-onShow", this.tabbar)
+    }
+}
+</script>
+<style lang="scss">
+  	.searchView{
+  		position: fiexd;
+  		top: 0; left: 0;
+  		width: 100%; height: 81rpx;
+  		z-index: 999;
+  		padding-top: 19rpx;
+  		.search{
+  			width: 700rpx; height: 62rpx;
+  			line-height: 62rpx;
+  			margin: 0 auto;
+  			background-color: #F4F3F3;
+  			border-radius: 60rpx;
+  		}
+  	}
+  	.newsView{
+
+  	}
+</style>

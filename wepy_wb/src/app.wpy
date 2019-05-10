@@ -1,0 +1,141 @@
+<style lang="css">
+@import './styles/base.wxss';
+@import './zanui/helper.wxss';
+@import './styles/font.wxss';
+</style>
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+
+import { setStore } from 'wepy-redux'
+import configStore from './store'
+
+const store = configStore()
+setStore(store)
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/newslist',
+      'pages/entry',
+      'pages/entryTwo',
+      'pages/home',
+      'pages/chat',
+      'pages/poster'
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black',
+      enablePullDownRefresh: true,
+    },
+    "tabBar": {
+      "color": "#7A7E83",
+      "selectedColor": "#3cc51f",
+      "borderStyle": "black",
+      "backgroundColor": "#ffffff",
+      "list": [
+        {
+          "pagePath": "pages/newslist",
+          "iconPath": "images/tab_1.png",
+          "selectedIconPath": "images/tab_1_act.png",
+          "text": "消息列表"
+        },
+        {
+          "pagePath": "pages/entry",
+          "iconPath": "images/tab_1.png",
+          "selectedIconPath": "images/tab_1_act.png",
+          "text": "页面入口1"
+        },
+        {
+          "pagePath": "pages/entryTwo",
+          "iconPath": "images/tab_2.png",
+          "selectedIconPath": "images/tab_2_act.png",
+          "text": "页面入口2"
+        }
+      ]
+    },
+    subPackages: [
+      {
+        root: "subPagesTemp",
+        pages: [
+          'pages/index',
+          'pages/selecte',
+          'pages/getPhone',
+        ]
+      }
+    ],
+  }
+
+  globalData = {
+    userInfo: null,
+    tabBar: {
+      "color": "#7A7E83",
+      "selectedColor": "#3cc51f",
+      "borderStyle": "black",
+      "backgroundColor": "#ffffff",
+      "list": [
+        {
+          "pagePath": "newslist",
+          "iconPath": "../images/tab_1.png",
+          "selectedIconPath": "../images/tab_1_act.png",
+          "text": "消息列表"
+        },
+        {
+          "pagePath": "entry",
+          "iconPath": "../images/tab_1_act.png",
+          "isSpecial": true,
+          "text": "页面入口1"
+        },
+        {
+          "pagePath": "entryTwo",
+          "iconPath": "../images/tab_2.png",
+          "selectedIconPath": "../images/tab_2_act.png",
+          "text": "页面入口2"
+        }
+      ]
+    }
+  }
+
+  constructor () {
+    super()
+    this.use('requestfix');
+    this.use('promisify');   //如果项目初始, 这里没有, 记得手动加上
+  }
+
+  onLaunch() {
+      wx.hideTabBar();  //隐藏config中配置好的官方tabbar, 再使用自定义的tabbar
+  }
+
+  getUserInfo(cb) {
+    const that = this
+    if (this.globalData.userInfo) {
+      return this.globalData.userInfo
+    }
+    wepy.getUserInfo({
+      success (res) {
+        that.globalData.userInfo = res.userInfo
+        cb && cb(res.userInfo)
+      }
+    })
+  }
+  editTabbar () {  //处理tabbar是否选中
+    let tabbar = this.globalData.tabBar;
+    let currentPages = getCurrentPages();
+    let _this = currentPages[currentPages.length - 1];
+    let pagePath = _this.route;
+    console.log(pagePath)
+    for (let i in tabbar.list) {
+        tabbar.list[i].selected = false;
+        if (pagePath.indexOf(tabbar.list[i].pagePath) != -1) {
+            tabbar.list[i].selected = true
+        } else {
+            tabbar.list[i].selected = false
+        }
+    }
+    return tabbar;
+  }
+}
+</script>

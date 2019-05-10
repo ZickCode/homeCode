@@ -1,0 +1,63 @@
+<template>
+	<view id="EntryPage">
+		<view class="entryView">
+			<repeat for="{{urlData}}">
+				<view style="width:710rpx; height: 54rpx;">
+					<navigator class="nav {{(index +1) % 2 === 0 ? 'nav-right' : 'nav-left'}}" url="{{item.url}}" open-type="navigate" hover-class="none">
+						<text>{{item.text}}</text> 
+					</navigator>
+				</view>
+			</repeat>
+		</view>
+		<tabbar :tabbar.sync="tabbar"></tabbar>
+	</view>
+</template>
+<script>
+import wepy from 'wepy';
+import tabbar from '@/components/tabbar'
+export default class Entry extends wepy.page{
+	config = {
+		navigationBarTitleText: "入口1"
+	}
+	components = {
+		tabbar
+	}
+	data = {
+		tabbar: null,
+		urlData: [
+			{url: 'home', text: '海报插件例子'},
+			{url: '../subPagesTemp/pages/index', text: '仟镇'}
+		]
+	}
+	onLoad() {
+
+	}
+	onShow() {
+        this.tabbar = this.$parent.editTabbar();
+        this.$apply();
+    }
+	methods = {
+
+	}
+}
+</script>
+<style lang="scss">
+	.entryView{
+		width: 750rpx;
+		padding: 20rpx;
+		margin-bottom: 120rpx;
+		.nav{
+			width:50%; 
+			padding: 10rpx 0;
+			text-align: center;
+			color: #ffffff;
+		}
+		.nav-left{
+			background-color: #5786BE
+		}
+		.nav-right{
+			background-color: #57B7BE;
+			float: right;
+		}
+	}
+</style>

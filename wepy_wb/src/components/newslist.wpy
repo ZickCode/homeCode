@@ -1,0 +1,86 @@
+<template>
+    <view class="newsList">
+    	<repeat for="{{newsData}}">
+    		<view class="news_item display-flex bgc-f" data-item="{{item}}" @tap.stop="goChatHandle">
+    			<view class="head_img">
+    				<image mode="aspectFill" src="{{item.headimgurl}}"></image>
+    			</view>
+    			<view class="content flex-1">
+    				<view class="name_time display-flex">
+    					<view class="name font-s32 owt">{{item.nickname}}</view>
+    					<view class="time font-s24 c-999 flex-1">{{item.time}}</view>
+    				</view>
+    				<view class="news_num">
+    					<view class="news font-s28 c-666 owt">{{item.content}}</view>
+    					<text class="number">{{item.number > 99 ? '99+' : item.number}}</text>
+    				</view>
+    			</view>
+    		</view>
+    	</repeat>
+    </view>
+</template>
+<script>
+import wepy from 'wepy';
+export default class newslist extends wepy.component {
+    //    props 接收父组件传递过来的值
+    props = {
+       	newsData: {
+       		type: Array,
+       		default: [],
+       	}
+    }
+
+    components = {}
+
+    data = {
+    }
+
+    onLoad() {
+       
+    }
+    methods = {
+        goChatHandle(e) {
+            let item = e.currentTarget.dataset.item;
+            wepy.navigateTo({url: './chat' + '?item=' + JSON.stringify(item)})
+        }
+    }
+}
+</script>
+<style lang="scss">
+    .news_item{
+    	margin-top: 10rpx;
+    	padding: 26rpx 20rpx;
+    	.head_img image{
+			width: 100rpx; height: 100rpx; border-radius: 100%; vertical-align: top;
+    	}
+    	.content{
+    		margin-left: 14rpx;
+    		.name_time{ 
+    			line-height: 42rpx;
+				.name{ width: 300rpx;}
+				.time{ text-align: right}
+    		}
+    		.news_num{
+    			margin-top: 20rpx;
+    			position: relative;
+    			.news{ width: 530rpx;}
+    			.number{ 
+					position: absolute;
+					right: 0;
+					top: 5rpx;
+					background-color: #f64e30;
+					min-width:32rpx;
+				    max-width:50rpx;
+				    height: 36rpx;
+				    padding: 0 4rpx;
+				    text-align: center;
+				    border-radius: 40rpx;
+				    background-color: #E60012;
+				    color: white;
+				    font-size: 24rpx;
+    				line-height: 36rpx;
+    			}
+    		}
+    	}
+    }
+</style>

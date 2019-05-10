@@ -1,0 +1,111 @@
+<template>
+    <view class="chatInput bgc-f">
+    	<view class="img c-999" @tap.stop="upImgHandle">
+    		<text class="zan-icon zan-icon-photograph"></text>
+    	</view>
+        <form report-submit="true" bindsubmit="sendHandle">
+        	<view class="content">
+        		<textarea class="textarea" placeholder="发消息" name="textarea" value="{{textvalue}}" 
+                    auto-height fixed show-confirm-bar="{{false}}" cursor-spacing="20"></textarea>
+        	</view>
+        	<view class="send c-fff font-s24">
+        		<text class="">发送</text>
+                <button form-type="submit">发送</button>
+        	</view>
+        </form>
+    </view>
+</template>
+<script>
+import wepy from 'wepy';
+export default class chat_input extends wepy.component {
+    //    props 接收父组件传递过来的值
+    props = {
+       
+    }
+
+    components = {}
+
+    data = {
+        textvalue: ''
+    }
+
+    onLoad() {
+       
+    }
+    methods = {
+        upImgHandle() {
+            wx.chooseImage({
+                count: 9,
+                sizeType: ['original', 'compressed'],
+                success: (res) => {
+                    this.$emit('upImg', res.tempFilePaths);
+                }
+            })
+        },
+        sendHandle(e) {
+            let formId = e.detail.formId;
+            let value = e.detail.value.textarea;
+            if (value) {
+                this.textvalue = value;
+                this.$apply();
+                this.$emit('send', value);
+                this.textvalue = "";
+                this.$apply();
+            } else {
+                console.log('消息不能为空')
+            }
+        }
+    }
+}
+</script>
+<style lang="scss">
+    .chatInput{
+    	position: fixed;
+    	left: 0; bottom: 0;
+    	width: 100%; min-height: 100rpx; max-height: 360rpx;
+    	.img{
+    		position: absolute;
+    		left: 0; top: 0;
+    		width: 100rpx;
+    		min-height: 100rpx;
+    		line-height: 100rpx;
+    		text-align: center;
+    		font-size: 50rpx;
+    	}
+    	.content{
+    		width: auto;
+    		margin: 16rpx 150rpx 16rpx 100rpx;
+    		min-height: 52rpx; max-height: 228rpx;
+    		border: 2rpx solid #dddddd;
+    		border-radius: 60rpx;
+    		padding-left: 20rpx;
+    		padding-top: 16rpx;
+    		.textarea{
+    			width: 94%;max-height: 228rpx;
+    			border-radius: 60rpx;
+    			color: #333;
+    		}
+    	}
+    	.send{
+    		position: absolute;
+    		right: 0; top: 0;
+    		width: 150rpx;
+    		height: 100rpx;
+    		line-height: 100rpx;
+    		text-align: center;
+    		word-spacing: 10rpx;
+    		text{
+				background-color: #57B8BE;
+				padding: 16rpx 30rpx;
+				border-radius: 35rpx;
+    		}
+            button{
+                position: absolute;
+                left: 0; top: 0;
+                opacity: 0;
+                width: 150rpx;
+                height: 100rpx;
+            }
+    	}
+    }
+</style>

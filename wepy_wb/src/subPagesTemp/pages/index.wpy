@@ -1,0 +1,101 @@
+<template>
+	<view id="IndexPage">
+		<view class="navView nav-bg-bright">
+			<view class="selectView" @tap.stop="selectHandle">
+				<text>{{currCity.text}}</text>
+				<text class="zan-icon zan-icon-arrow"></text>
+			</view>
+		</view>
+		<view class="container">
+			<view class="banner">
+				<image mode="aspectFill" data-text="{{currCity.text}}" src="{{currCity.id <= 2 ? banner_img_1 : banner_img_2}}" @tap.stop="toastHandle"></image>
+			</view>
+			<view class="link">
+				<image mode="aspectFill" data-text="{{currCity.text}}" src="{{currCity.id <= 2 ? link_img_1 : link_img_2}}" @tap.stop="toastHandle"></image>
+			</view>
+		</view>
+	</view>
+</template>
+<script>
+import wepy from 'wepy';
+export default class Index extends wepy.page{
+	config = {
+		navigationBarTitleText: "仟镇"
+	}
+	components = {
+
+	}
+	data = {
+		currCity: {id: 1, text: '仟镇'},
+		banner_img_1: 'https://api.sq.letwx.com/assets/uploads/providerImages.jpg',
+		banner_img_2: 'https://api.sq.letwx.com/assets/uploads/2019/03/rxwFOBr2ZA.jpg',
+		link_img_1: 'https://api.sq.letwx.com/assets/uploads/2019/03/0BO7V4McGM.jpg',
+		link_img_2: 'https://api.sq.letwx.com/assets/uploads/2019/03/jXHQBoCvAz.jpeg'
+	}
+	onLoad() {
+
+	}
+	methods = {
+		selectHandle() {
+			wepy.navigateTo({url: './selecte' + '?currCity=' + JSON.stringify(this.currCity)})
+		},
+		toastHandle(e) {
+			let text = e.currentTarget.dataset.text;
+			wx.showToast({
+				  title: text,
+				  icon: 'none',
+				  duration: 2000
+			})
+		}
+	}
+	changeInfo(item) {
+		this.currCity = item;
+	}
+}
+</script>
+<style lang="scss">
+	//#FF9934
+	.nav-bg-bright{ background-color: #FF9934 }
+	.nav-bg-dark{ background-color: rgba(0, 0, 0, .5); }
+	.navView{
+		height: 80rpx;
+		width: 750rpx;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		.selectView{
+			font-size: 28rpx;
+			color: #ffffff;
+			width: 130rpx;
+			text-align: center;
+			line-height: 80rpx;
+			.zan-icon-arrow{
+				transform: rotate(90deg);
+				font-size: 24rpx;
+				margin-left: 4rpx;
+			}
+		}
+	}
+	.container{
+		width: 100%;
+		min-height: 2000rpx;	
+		background: linear-gradient(to bottom, #FF8C00 10%, #F4A460 20%, white);
+		padding: 100rpx 20rpx 20rpx 20rpx;
+		.banner{
+			image{
+				width: 710rpx;
+				height: 300rpx;
+				border-radius: 30rpx;
+			}
+		}
+		.link{
+			margin-top: 20rpx;
+			image{
+				width: 710rpx;
+				height: 100rpx;
+				border-radius: 30rpx;
+			}
+		}
+	}
+</style>
