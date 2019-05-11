@@ -1439,7 +1439,7 @@ node-gyp@^3.8.0:
     request "^2.87.0"
     rimraf "2"
     semver "~5.3.0"
-    tar ">=4.4.2"
+    tar "4.4.2"
     which "1"
 
 node-sass@^4.0.0:
@@ -2023,7 +2023,7 @@ symbol-observable@^1.0.3:
   resolved "https://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha1-wiaIrtTqs83C3+rLtWFmBWCgCAQ=
 
-tar@^2.0.0:
+tar@4.2.2:
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/tar/download/tar-2.2.1.tgz#8e4d2a256c0e2185c6b18ad694aec968b83cb1d1"
   integrity sha1-jk0qJWwOIYXGsYrWlK7JaLg8sdE=
