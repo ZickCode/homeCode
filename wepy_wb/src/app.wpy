@@ -8,21 +8,13 @@
 import wepy from 'wepy'
 import 'wepy-async-function'
 
-import { setStore } from 'wepy-redux'
-import configStore from './store'
-
-const store = configStore()
-setStore(store)
-
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/newslist',
-      'pages/entry',
-      'pages/entryTwo',
+      'pages/user',
       'pages/home',
-      'pages/chat',
-      'pages/poster'
+      'pages/community',
+      'pages/message',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -38,33 +30,23 @@ export default class extends wepy.app {
       "backgroundColor": "#ffffff",
       "list": [
         {
-          "pagePath": "pages/newslist",
-          "iconPath": "images/tab_1.png",
-          "selectedIconPath": "images/tab_1_act.png",
-          "text": "消息列表"
+          "pagePath": "pages/home"
         },
         {
-          "pagePath": "pages/entry",
-          "iconPath": "images/tab_1.png",
-          "selectedIconPath": "images/tab_1_act.png",
-          "text": "页面入口1"
+          "pagePath": "pages/community"
         },
         {
-          "pagePath": "pages/entryTwo",
-          "iconPath": "images/tab_2.png",
-          "selectedIconPath": "images/tab_2_act.png",
-          "text": "页面入口2"
+          "pagePath": "pages/message"
+        },
+        {
+          "pagePath": "pages/user"
         }
       ]
     },
     subPackages: [
       {
         root: "subPagesTemp",
-        pages: [
-          'pages/index',
-          'pages/selecte',
-          'pages/getPhone',
-        ]
+        pages: []
       }
     ],
   }
@@ -72,28 +54,39 @@ export default class extends wepy.app {
   globalData = {
     userInfo: null,
     tabBar: {
-      "color": "#7A7E83",
-      "selectedColor": "#3cc51f",
+      "color": "#999",
+      "selectedColor": "#141414",
       "borderStyle": "black",
       "backgroundColor": "#ffffff",
       "list": [
         {
-          "pagePath": "newslist",
-          "iconPath": "../images/tab_1.png",
-          "selectedIconPath": "../images/tab_1_act.png",
-          "text": "消息列表"
+          "pagePath": "home",
+          "iconPath": "../images/tabs/home.png",
+          "selectedIconPath": "../images/tabs/home-active.png",
+          "text": "首页"
         },
         {
-          "pagePath": "entry",
-          "iconPath": "../images/tab_1_act.png",
+          "pagePath": "community",
+          "iconPath": "../images/tabs/community.png",
+          "selectedIconPath": "../images/tabs/community-active.png",
+          "text": "社区"
+        },
+        {
+          "pagePath": "add",
+          "iconPath": "../images/tabs/add.png",
           "isSpecial": true,
-          "text": "页面入口1"
         },
         {
-          "pagePath": "entryTwo",
-          "iconPath": "../images/tab_2.png",
-          "selectedIconPath": "../images/tab_2_act.png",
-          "text": "页面入口2"
+          "pagePath": "message",
+          "iconPath": "../images/tabs/message.png",
+          "selectedIconPath": "../images/tabs/message-active.png",
+          "text": "消息"
+        },
+        {
+          "pagePath": "user",
+          "iconPath": "../images/tabs/user.png",
+          "selectedIconPath": "../images/tabs/user-active.png",
+          "text": "我的"
         }
       ]
     }
