@@ -15,11 +15,9 @@
 </template>
 <script>
 import wepy from 'wepy';
-/**
-  参考链接: https://developers.weixin.qq.com/community/develop/doc/000c6e038c0ce05413f71e7ce56c04
-*/
+
 export default class tabbar extends wepy.component {
-    //    props 接收父组件传递过来的值
+  
     props = {
        tabbar: {
        		type: Object,
@@ -48,7 +46,7 @@ export default class tabbar extends wepy.component {
     event = {}
 }
 </script>
-<style lang="scss">
+<style lang="less">
 	.tabbar_box{
     display: flex;
     flex-direction: row;

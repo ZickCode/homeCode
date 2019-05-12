@@ -1,5 +1,5 @@
 <template>
-  <view style="height: 100%;">
+  <view>
     <view class="container">
         <view class="nav-box">
           <view class="nav-item">

@@ -11,10 +11,11 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/user',
       'pages/home',
       'pages/community',
       'pages/message',
+      'pages/user',
+      'pages/artcleDetail',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -119,7 +120,6 @@ export default class extends wepy.app {
     let currentPages = getCurrentPages();
     let _this = currentPages[currentPages.length - 1];
     let pagePath = _this.route;
-    console.log(pagePath)
     for (let i in tabbar.list) {
         tabbar.list[i].selected = false;
         if (pagePath.indexOf(tabbar.list[i].pagePath) != -1) {

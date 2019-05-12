@@ -33,15 +33,7 @@
 		},
 		"miniprogram": {
 			"current": 0,
-			"list": [
-				{
-					"id": 0,
-					"name": "仟镇",
-					"pathName": "subPagesTemp/pages/index",
-					"query": "",
-					"scene": null
-				}
-			]
+			"list": []
 		}
 	}
 }
