@@ -1,6 +1,5 @@
 <style lang="css">
 @import './styles/base.wxss';
-@import './zanui/helper.wxss';
 @import './styles/font.wxss';
 </style>
 
@@ -11,6 +10,8 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/service',
+      'pages/productList',
       'pages/home',
       'pages/community',
       'pages/message',
@@ -43,13 +44,7 @@ export default class extends wepy.app {
           "pagePath": "pages/user"
         }
       ]
-    },
-    subPackages: [
-      {
-        root: "subPagesTemp",
-        pages: []
-      }
-    ],
+    }
   }
 
   globalData = {

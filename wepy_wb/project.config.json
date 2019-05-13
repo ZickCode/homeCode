@@ -9,7 +9,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"appid": "wx5feec9b6f1be2b9f",
+	"appid": "wx601c6cabe4ade759",
 	"projectname": "wepy-poster-test",
 	"miniprogramRoot": "dist/",
 	"libVersion": "2.6.2",
