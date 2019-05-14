@@ -10,13 +10,20 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/artcleDetail',
-      'pages/productList',
       'pages/home',
       'pages/community',
       'pages/message',
       'pages/user',
       'pages/service',
+      'pages/artcleDetail',
+      'pages/productList',
+      'pages/watchMe',
+      'pages/comment',
+      'pages/like',
+      'pages/remindMe',
+      'pages/drafts',
+      'pages/collection',
+      'pages/parter',
     ],
     window: {
       backgroundTextStyle: 'light',
