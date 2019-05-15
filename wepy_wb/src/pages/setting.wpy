@@ -2,36 +2,37 @@
   <view>
     <view class="container">
       <view class="item-box">
-        <view class="title">提醒方式</view>
+        <view class="title">账号绑定</view>
         <view class="switch-box">
-          <text>声音提醒</text>
-          <switch checked color="#1eb4fa" />
+          <text>手机绑定</text>
+          <view class="text-box">
+            <text>已绑定</text>
+            <image src="/images/artcle/next.png"></image>
+          </view>
         </view>
         <view class="switch-box">
-          <text>震动提醒</text>
-          <switch />
-        </view>
-      </view>
-      <view class="item-box">
-        <view class="title">谁可以提醒我</view>
-        <view class="switch-box">
-          <text>所有人</text>
-          <switch checked color="#1eb4fa" />
-        </view>
-        <view class="switch-box">
-          <text>伙伴</text>
-          <switch />
+          <text>微信绑定</text>
+          <view class="text-box">
+            <text>已绑定</text>
+            <image src="/images/artcle/next.png"></image>
+          </view>
         </view>
       </view>
       <view class="item-box">
-        <view class="title">黑名单</view>
+        <view class="title">关于书胤</view>
         <view class="switch-box">
-          <text>已拉黑</text>
-          <image src="/images/artcle/next.png"></image>
+          <text>版本</text>
+          <view class="text-box">
+            <text>V1.0.1</text>
+            <image src="/images/artcle/next.png"></image>
+          </view>
         </view>
         <view class="switch-box">
-          <text>已删除</text>
-          <image src="/images/artcle/next.png"></image>
+          <text>清除缓存</text>
+          <view class="text-box">
+            <text>12.6M</text>
+            <image src="/images/artcle/next.png"></image>
+          </view>
         </view>
       </view>
     </view>
@@ -40,9 +41,9 @@
 <script>
 import wepy from 'wepy';
 
-export default class privateSetting extends wepy.page {
+export default class setting extends wepy.page {
   config = {
-    navigationBarTitleText: '隐私设置',
+    navigationBarTitleText: '设置',
     enablePullDownRefresh: false
   };
   components = {
@@ -83,6 +84,10 @@ export default class privateSetting extends wepy.page {
           width: 15rpx;
           height: 24rpx;
           flex-shrink: 0;
+          margin: 0 0 0 15rpx;
+        }
+        .text-box{
+          color: #282828;
         }
       }
     }

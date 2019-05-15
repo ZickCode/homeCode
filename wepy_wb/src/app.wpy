@@ -10,7 +10,6 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/privateSetting',
       'pages/home',
       'pages/community',
       'pages/message',
@@ -25,6 +24,10 @@ export default class extends wepy.app {
       'pages/drafts',
       'pages/collection',
       'pages/parter',
+      'pages/editUserInfo',
+      'pages/myStore',
+      'pages/privateSetting',
+      'pages/setting',
     ],
     window: {
       backgroundTextStyle: 'light',
