@@ -9,7 +9,7 @@ list:
 artcle      文章详情-2，6，8
 collection  收藏-19
 comment     评论-11
-community   社区-4，7，
+community   社区-5，7，
 drafts      草稿箱-18
 home        首页-1
 like        点赞-12
