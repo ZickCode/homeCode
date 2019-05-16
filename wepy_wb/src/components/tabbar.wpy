@@ -16,34 +16,33 @@
 <script>
 import wepy from 'wepy';
 
-export default class tabbar extends wepy.component {
-  
-    props = {
-       tabbar: {
-       		type: Object,
-       		defalt: null
-       }
-    }
-    components = {}
+export default class tabbar extends wepy.component {  
+  props = {
+      tabbar: {
+        type: Object,
+        defalt: null
+      }
+  }
+  components = {}
 
-    data = {
-    	
-    }
+  data = {
+    
+  }
 
-    onLoad() {
-       
-    }
+  onLoad() {
+      
+  }
 
-    computed = {}
-    methods = {
-    	switchTab(e) {
-	      const data = e.currentTarget.dataset
-	      const url = data.path
-	      wx.switchTab({url});
-	      this.selected = data.index;
-	    }
+  computed = {}
+  methods = {
+    switchTab(e) {
+      const data = e.currentTarget.dataset
+      const url = data.path
+      wx.switchTab({url});
+      this.selected = data.index;
     }
-    event = {}
+  }
+  event = {}
 }
 </script>
 <style lang="less">

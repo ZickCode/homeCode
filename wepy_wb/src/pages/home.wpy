@@ -37,19 +37,19 @@
           </view>
           <text>官网</text>
         </view>
-        <view class="nav-item">
+        <view class="nav-item" @tap="GoToPage" data-url="artcleDetail">
           <view>
             <image src="/images/index/intro.png"></image>
           </view>
           <text>介绍</text>
         </view>
-        <view class="nav-item">
+        <view class="nav-item" @tap="GoToPage" data-url="productList">
           <view>
             <image src="/images/index/product.png"></image>
           </view>
           <text>产品</text>
         </view>
-        <view class="nav-item">
+        <view class="nav-item" @tap="GoToPage" data-url="service">
           <view>
             <image src="/images/index/service.png"></image>
           </view>
@@ -63,15 +63,15 @@
           <text class="more">查看全部 ></text>
         </view>
         <div class="content">
-          <view class="course-item">
+          <view class="course-item" @tap="GoToPage" data-url="community">
             <image src="https://via.placeholder.com/255x135"></image>
             <text>3.8女神节流量引爆8女神节流量引爆</text>
           </view>
-          <view class="course-item">
+          <view class="course-item" @tap="GoToPage" data-url="community">
             <image src="https://via.placeholder.com/255x135"></image>
             <text>3.8女神节流量引爆8女神节流量引爆</text>
           </view>
-          <view class="course-item">
+          <view class="course-item" @tap="GoToPage" data-url="community">
             <image src="https://via.placeholder.com/255x135"></image>
             <text>3.8女神节流量引爆8女神节流量引爆</text>
           </view>
@@ -80,13 +80,13 @@
 
       <view class="case-box">
         <text class="title">案 例 展 示</text>
-        <view class="case-item">
+        <view class="case-item" @tap="GoToPage" data-url="artcleDetail">
           <image src="https://via.placeholder.com/750x375" mode="scaleToFill"></image>
         </view>
-        <view class="case-item">
+        <view class="case-item" @tap="GoToPage" data-url="artcleDetail">
           <image src="https://via.placeholder.com/750x375"></image>
         </view>
-        <view class="case-item">
+        <view class="case-item" @tap="GoToPage" data-url="artcleDetail">
           <image src="https://via.placeholder.com/750x375"></image>
         </view>
       </view>
@@ -121,10 +121,24 @@ export default class home extends wepy.page {
     autoplay: false,
     interval: 3000,
     duration: 1000,
-    circular: true
+    circular: true,
+    tabbarArr: ['home', 'community', 'message', 'user']
   };
+  //轮播
   SwiperChange(e) {
     this.currnetSwiperIndex = e.detail.current;
+  }
+  //跳转
+  GoToPage(url) {
+    if(this.tabbarArr.indexOf(url.currentTarget.dataset.url) != -1){
+      wx.switchTab({
+        url: '/pages/' + url.currentTarget.dataset.url
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/' + url.currentTarget.dataset.url
+      })
+    }
   }
   onLoad() {}
   onShow() {

@@ -1,5 +1,6 @@
 <template>
   <view>
+    <navigationBar :navigationBar.sync="navigationBar"></navigationBar>
     <view class="container">
       <view class="search-content">
         <view class="search-box">
@@ -116,6 +117,7 @@
 <script>
 import wepy from 'wepy';
 import tabbar from '@/components/tabbar';
+import navigationBar from '@/components/navigationBar';
 
 export default class community extends wepy.page {
   config = {
@@ -123,10 +125,20 @@ export default class community extends wepy.page {
     enablePullDownRefresh: false
   };
   components = {
-    tabbar
+    tabbar,
+    navigationBar
   };
   data = {
-    tabbar: null
+    tabbar: null,
+    navigationBar: {
+      title: '社区',
+      btnRight: {
+        text: '测试',
+        handler: ()=>{
+          alert(123)
+        }
+      }
+    }
   };
   GoToDetail() {
     wx.navigateTo({
